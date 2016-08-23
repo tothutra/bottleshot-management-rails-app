@@ -31,7 +31,7 @@ Step 2: Create models
       belongs_to :user
       has_one :shapes
       has_one :winecolors
-      hae 
+
 
 
 
