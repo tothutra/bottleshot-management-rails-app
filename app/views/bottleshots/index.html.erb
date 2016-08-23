@@ -1,0 +1,11 @@
+<h2>All of my bottleshots:</h2>
+<br>
+<ul>
+  <% @bottleshots.each do |bottleshot| %>
+    <li><%= bottleshot.name %> - <%= bottleshot.status %></li>
+  <% end %>
+</ul>
+<br>
+<form method="get" action="<%=new_user_bottleshot_path(@user)%>">
+    <button type="submit">Add A New Bottleshot</button>
+</form>

@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:index, :show, :edit, :update, :destroy]
 
   def show
-    
   end
 
   private

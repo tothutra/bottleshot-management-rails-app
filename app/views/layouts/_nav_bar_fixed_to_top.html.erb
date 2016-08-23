@@ -15,7 +15,7 @@
         <% if user_signed_in? %>
           <li><%= link_to "My Profile", user_path(current_user) %></li>
           <li><a href="#signup">My Order</a></li>
-          <li><a href="#signup">My Library</a></li>
+          <li><%= link_to "My Library", user_bottleshots_path(current_user) %></li>
         <% else %>
           <li><%= link_to "Sign In", new_user_session_path %></li>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>

@@ -20,13 +20,16 @@ Step 2: Create models
 
   User
     Attributes
+      name: string
       role: integer
     Relations 
       has_many :bottleshots 
 
   Bottleshot
-    Attributes 
-      user_id
+    Attributes
+      name: string 
+      user_id: integer
+      status: string, default: "not sumbmitted"
     Relations
       belongs_to :user
       has_one :shapes
