@@ -20,7 +20,7 @@ Step 2: Create models
 
   User
     Attributes
-
+      role: integer
     Relations 
       has_many :bottleshots 
 
@@ -29,6 +29,9 @@ Step 2: Create models
       user_id
     Relations
       belongs_to :user
+      has_one :shapes
+      has_one :winecolors
+      hae 
 
 
 
