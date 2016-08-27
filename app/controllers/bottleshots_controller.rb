@@ -11,9 +11,9 @@ class BottleshotsController < ApplicationController
   end
 
   def create
-    #raise params.inspect
-    bottleshot = @user.bottleshots.build(bottleshot_params)
-    redirect_to user_bottleshots_path(@user, bottleshot)
+    @bottleshot = @user.bottleshots.build(bottleshot_params)
+    @bottleshot.save
+    redirect_to user_bottleshots_path(@user)
   end
 
   def edit
