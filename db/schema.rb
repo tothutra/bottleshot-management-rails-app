@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160827172231) do
+ActiveRecord::Schema.define(version: 20160827173506) do
 
   create_table "bottle_shapes", force: :cascade do |t|
     t.string   "name"
@@ -23,9 +23,18 @@ ActiveRecord::Schema.define(version: 20160827172231) do
   create_table "bottleshots", force: :cascade do |t|
     t.string   "varietal"
     t.integer  "user_id"
-    t.string   "status",     default: "not submitted"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.string   "status",          default: "not submitted"
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.integer  "vintage"
+    t.integer  "bottle_shape_id"
+    t.integer  "glass_color_id"
+    t.integer  "wine_color_id"
+    t.integer  "capsule_id"
+    t.boolean  "screenprinted"
+    t.integer  "paperstock_id"
+    t.integer  "label_finish_id"
+    t.string   "label_file"
   end
 
   create_table "capsules", force: :cascade do |t|
