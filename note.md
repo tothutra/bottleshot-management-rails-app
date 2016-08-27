@@ -47,6 +47,17 @@ Step 2: Create models
       belongs_to :paperstock
       belongs_to :label_finish
 
+  BottleShape
+    Attributes
+      name: string
+      description: string
+    Relations
+      has_many: bottleshots
 
-
+  WineColor
+    Attributes
+      name: string
+      description: string
+    Relations
+      has_many: bottleshots
 

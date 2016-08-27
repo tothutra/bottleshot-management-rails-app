@@ -1,0 +1,2 @@
+class WineColorsController < ApplicationController
+end
