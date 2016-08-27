@@ -1,3 +1,3 @@
 class WineColor < ActiveRecord::Base
-  has_many: bottleshots
+  has_many :bottleshots
 end
