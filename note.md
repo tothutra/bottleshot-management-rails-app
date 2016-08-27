@@ -31,7 +31,7 @@ Step 2: Create models
       user_id: integer
       status: string, default: "not sumbmitted"
       vintage: integer
-      bottleshape_id: integer
+      bottle_shape_id: integer
       glass_color_id: integer
       wine_color_id: integer
       capsule_id: integer
@@ -41,7 +41,7 @@ Step 2: Create models
       label_file: string
     Relations
       belongs_to :user
-      belongs_to :bottleshape
+      belongs_to :bottle_shape
       belongs_to :wine_color
       belongs_to :capsule
       belongs_to :paperstock

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bottle_shapes
   devise_for :users
   resources :users do 
     resources :bottleshots
