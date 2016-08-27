@@ -6,4 +6,8 @@ class Bottleshot < ActiveRecord::Base
   belongs_to :capsule
   belongs_to :paperstock
   belongs_to :label_finish
+
+  def fullname
+    self.varietal + self.vintage.to_s
+  end
 end

@@ -56,7 +56,7 @@
     Relations
       has_many: bottleshots
 
-  GlassColor
+  GlassColore
     Attributes
       name: string
       description: string
@@ -92,8 +92,6 @@
       has_many: bottleshots
 
 #Step 2B: Add seed data
-
-  
  
 ##Step 3: Add CRUD functionality to bottleshots
 
