@@ -1,0 +1,15 @@
+<h2><%= @bottleshot.fullname %></h2>
+<p>Bottle Shape: <%= @bottleshot.bottle_shape_name %></p>
+<p>Glass Color: <%= @bottleshot.glass_color_name %></p>
+<p>Wine Color: <%= @bottleshot.wine_color_name %></p>
+<p>Capsule: <%= @bottleshot.capsule_name %></p>
+<p>Screenprinted: <%= @bottleshot.screenprinted ? "Yes" : "No" %></p>
+<p>Paperstock: <%= @bottleshot.paperstock_name %></p>
+<p>Label Finish: <%= @bottleshot.label_finish_name %></p>
+<p>Label File: <%= @bottleshot.label_file %></p>
+<br>
+<% if @bottleshot.status == "not submitted" %>
+  <%=link_to "Delete", user_bottleshot_path(@user, @bottleshot), method: "DELETE" %>
+  <br>
+  <%=link_to "Edit", edit_user_bottleshot_path(@user, @bottleshot) %>
+<% end %>

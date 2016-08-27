@@ -2,22 +2,22 @@
   <%= f.label :varietal, "Varietal Name:" %>
   <%= f.text_field :varietal %><br>
   <%= f.label :vintage, "Vintage Year:" %>
-  <%= f.number_field :varietal %><br>
+  <%= f.number_field :vintage %><br>
   <br>
   <%= f.label :bottle_shape_id, "Choose Your Bottle Shape: " %><br>
-  <%= f.collection_check_boxes :bottle_shape_id, BottleShape.all, :id, :name %>
+  <%= f.collection_radio_buttons :bottle_shape_id, BottleShape.all, :id, :name %>
   <br>
   <br>
   <%= f.label :glass_color_id, "Choose Your Glass Color: " %><br>
-  <%= f.collection_check_boxes :glass_color_id, GlassColor.all, :id, :name %>
+  <%= f.collection_radio_buttons :glass_color_id, GlassColor.all, :id, :name %>
   <br>
   <br>
   <%= f.label :wine_color_id, "Choose Your Wine Color: " %><br>
-  <%= f.collection_check_boxes :wine_color_id, WineColor.all, :id, :name %>
+  <%= f.collection_radio_buttons :wine_color_id, WineColor.all, :id, :name %>
   <br>
   <br>
   <%= f.label :capsule_id, "Choose Your Capsule: " %><br>
-  <%= f.collection_check_boxes :capsule_id, Capsule.all, :id, :name %>
+  <%= f.collection_radio_buttons :capsule_id, Capsule.all, :id, :name %>
   <br>
   <br>
   <%= f.label :screenprinted, "Check If Your Label Screenprinted: " %> 
@@ -25,11 +25,11 @@
   <br>
   <br>
   <%= f.label :paperstock_id, "Choose Your Label Paperstock: " %><br>
-  <%= f.collection_check_boxes :paperstock_id, Paperstock.all, :id, :name %>
+  <%= f.collection_radio_buttons :paperstock_id, Paperstock.all, :id, :name %>
   <br>
   <br>
   <%= f.label :label_finish_id, "Choose Your Label Finish: " %><br>
-  <%= f.collection_check_boxes :label_finish_id, LabelFinish.all, :id, :name %>
+  <%= f.collection_radio_buttons :label_finish_id, LabelFinish.all, :id, :name %>
   <br>
   <br>
   <%= f.label :label_file, "URL To Label File: " %>

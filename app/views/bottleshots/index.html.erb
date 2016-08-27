@@ -2,7 +2,12 @@
 <br>
 <ul>
   <% @bottleshots.each do |bottleshot| %>
-    <li><%= link_to bottleshot.fullname, user_bottleshot_path(@user, bottleshot) %> <%= "| Delete Button | Edit Button" if bottleshot.status == "not submitted" %></li>
+    <li><%= link_to bottleshot.fullname, user_bottleshot_path(@user, bottleshot) %> - <%= bottleshot.status %> 
+      <% if bottleshot.status == "not submitted" %>
+        - <%=link_to "Delete", user_bottleshot_path(@user, bottleshot), method: "DELETE" %>
+        - <%=link_to "Edit", edit_user_bottleshot_path(@user, bottleshot) %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
 <br>
