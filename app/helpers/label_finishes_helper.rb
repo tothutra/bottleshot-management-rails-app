@@ -1,0 +1,2 @@
+module LabelFinishesHelper
+end

@@ -1,0 +1,2 @@
+class LabelFinishesController < ApplicationController
+end

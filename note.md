@@ -25,6 +25,8 @@
     Relations 
       has_many :bottleshots 
 
+  Generate Devise for User
+
   Bottleshot
     Attributes
       name: string 
@@ -68,16 +70,23 @@
     Relations
       has_many: bottleshots
 
-  Capsule
-    Attributes
-      name: string
-      description: string
-    Relations
-      has_many: bottleshots
-
   Paperstock
     Attributes
       name: string
       description: string
     Relations
       has_many: bottleshots
+
+  LabelFinish
+    Attributes
+      name: string
+      description: string
+    Relations
+      has_many: bottleshots
+
+#Step 2B: Add seed data
+
+
+##Step 3: Add CRUD functionality to bottleshots
+
+##Step 4: 

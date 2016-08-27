@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :label_finishes
   resources :paperstocks
   resources :capsules
   resources :wine_colors

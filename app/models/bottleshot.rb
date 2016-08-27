@@ -4,4 +4,5 @@ class Bottleshot < ActiveRecord::Base
   belongs_to :wine_color
   belongs_to :capsule
   belongs_to :paperstock
+  belongs_to :label_finish
 end
