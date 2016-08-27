@@ -30,10 +30,22 @@ Step 2: Create models
       name: string 
       user_id: integer
       status: string, default: "not sumbmitted"
+      vintage: integer
+      bottleshape_id: integer
+      glass_color_id: integer
+      wine_color_id: integer
+      capsule_id: integer
+      screenprinted: boolean
+      paperstock_id: integer
+      label_finish_id: integer
+      label_file: string
     Relations
       belongs_to :user
-      has_one :shapes
-      has_one :winecolors
+      belongs_to :bottleshape
+      belongs_to :wine_color
+      belongs_to :capsule
+      belongs_to :paperstock
+      belongs_to :label_finish
 
 
 
