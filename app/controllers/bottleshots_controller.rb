@@ -7,11 +7,13 @@ class BottleshotsController < ApplicationController
   end
 
   def new
-    
+    @bottleshot = Bottleshot.new
   end
 
   def create
-    
+    #raise params.inspect
+    bottleshot = @user.bottleshots.build(bottleshot_params)
+    redirect_to user_bottleshots_path(@user, bottleshot)
   end
 
   def edit
@@ -26,6 +28,10 @@ class BottleshotsController < ApplicationController
 
   def find_user
     @user = User.find(params[:user_id])
+  end
+
+  def bottleshot_params
+    params.require(:bottleshot).permit(:name)
   end
 
 end
