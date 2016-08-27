@@ -1,13 +1,13 @@
-class AddColumnsToBottleShot < ActiveRecord::Migration
+class AddColumnsToBottleshot < ActiveRecord::Migration
   def change
-    add_column :bottle_shots, :vintage, :integer
-    add_column :bottle_shots, :bottle_shape_id, :integer
-    add_column :bottle_shots, :glass_color_id, :integer
-    add_column :bottle_shots, :wine_color_id, :integer
-    add_column :bottle_shots, :capsule_id, :integer
-    add_column :bottle_shots, :screenprinted, :boolean
-    add_column :bottle_shots, :paperstock_id, :integer
-    add_column :bottle_shots, :label_finish_id, :integer
-    add_column :bottle_shots, :label_file, :string
+    add_column :bottleshots, :vintage, :integer
+    add_column :bottleshots, :bottle_shape_id, :integer
+    add_column :bottleshots, :glass_color_id, :integer
+    add_column :bottleshots, :wine_color_id, :integer
+    add_column :bottleshots, :capsule_id, :integer
+    add_column :bottleshots, :screenprinted, :boolean
+    add_column :bottleshots, :paperstock_id, :integer
+    add_column :bottleshots, :label_finish_id, :integer
+    add_column :bottleshots, :label_file, :string
   end
 end
