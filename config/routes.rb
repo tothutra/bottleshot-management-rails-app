@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :capsules
   resources :wine_colors
   resources :bottle_shapes
   devise_for :users

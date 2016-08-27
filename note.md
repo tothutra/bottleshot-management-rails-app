@@ -61,3 +61,10 @@ Step 2: Create models
     Relations
       has_many: bottleshots
 
+  Capsule
+    Attributes
+      name: string
+      description: string
+    Relations
+      has_many: bottleshots
+
