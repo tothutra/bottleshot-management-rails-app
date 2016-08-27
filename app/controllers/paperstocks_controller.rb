@@ -1,0 +1,2 @@
+class PaperstocksController < ApplicationController
+end

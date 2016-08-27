@@ -1,4 +1,4 @@
-Step 1: Apply css asset + plan out basic root page
+##Step 1: Apply css asset + plan out basic root page
   Create SiteController and stub out Homepage
   Apply basic assets from Bootstrap for Grid system and fixed top Navigation Bar
   
@@ -16,7 +16,7 @@ Step 1: Apply css asset + plan out basic root page
     If logged in: Sign Out | My Library | My Order 
     If not logged in: Sign In | Sign Up
 
-Step 2: Create models
+##Step 2: Create models
 
   User
     Attributes
@@ -68,3 +68,16 @@ Step 2: Create models
     Relations
       has_many: bottleshots
 
+  Capsule
+    Attributes
+      name: string
+      description: string
+    Relations
+      has_many: bottleshots
+
+  Paperstock
+    Attributes
+      name: string
+      description: string
+    Relations
+      has_many: bottleshots
