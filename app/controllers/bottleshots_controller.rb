@@ -31,7 +31,7 @@ class BottleshotsController < ApplicationController
   end
 
   def bottleshot_params
-    params.require(:bottleshot).permit(:name)
+    params.require(:bottleshot).permit(:varietal)
   end
 
 end
