@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users do 
     resources :bottleshots
+    get '/orders' => 'bottleshots#orders'
   end
+
   get 'site/home'
 
   root 'site#home'
