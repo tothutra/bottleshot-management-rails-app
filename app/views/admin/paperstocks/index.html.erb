@@ -1,0 +1,9 @@
+<h2>All Paperstocks:</h2>
+<ul>
+  <% @paperstocks.each do |paperstock| %>
+    <li><%= link_to paperstock.name, admin_paperstock_path(paperstock) %> - <%=link_to "Delete", admin_paperstock_path(paperstock), method: "DELETE" %>
+        - <%=link_to "Edit", edit_admin_paperstock_path(paperstock) %></li>
+  <% end %>
+</ul>
+<br>
+<%= render partial: 'form', locals: {button_text: "Create New Paperstock"} %>

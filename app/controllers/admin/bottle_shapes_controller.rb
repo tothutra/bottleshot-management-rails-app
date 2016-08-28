@@ -12,7 +12,7 @@ class Admin::BottleShapesController < ApplicationController
   end
 
   def create
-    @bottle_shape = BottleShape.new(bottle_shape_params)
+    @bottle_shape = BottleShape.new(bottle_shape_params) 
     if @bottle_shape.save
       redirect_to admin_bottle_shapes_path
     else

@@ -1,0 +1,9 @@
+<h2><%= @paperstock.name %></h2>
+<h4><%= @paperstock.description %></h4>
+<br>
+<p>All shots with this paperstock:</p>
+<ul>
+  <% @bottleshots.each do |bottleshot|  %>
+    <li><%= link_to bottleshot.fullname, user_bottleshot_path(bottleshot.user, bottleshot) %></li>
+  <% end %>
+</ul>
