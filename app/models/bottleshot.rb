@@ -8,7 +8,7 @@ class Bottleshot < ActiveRecord::Base
   belongs_to :label_finish
 
   def fullname
-    "#{self.varietal} #{self.vintage.to_s}"
+    "#{self.vintage.to_s} #{self.varietal}"
   end
 
   def bottle_shape_name

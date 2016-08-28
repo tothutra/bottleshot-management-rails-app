@@ -34,6 +34,10 @@ class BottleshotsController < ApplicationController
     redirect_to user_bottleshots_path(@user)
   end
 
+  def orders
+    @bottleshots = @user.bottleshots.where("status = ?", "open order")
+  end
+
   private
 
   def find_user

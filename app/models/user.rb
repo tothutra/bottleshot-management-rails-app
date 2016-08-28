@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   enum role: [:user, :admin]
   has_many :bottleshots
+  has_many :bottle_shapes, through: :bottleshots
 
 end
