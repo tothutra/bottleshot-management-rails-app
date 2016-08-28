@@ -102,6 +102,9 @@
 
 ##Step 5: Add OmniAuth
 https://richonrails.com/articles/google-authentication-in-ruby-on-rails
+https://deepakrip007.wordpress.com/2013/11/05/google-integration-using-devise-and-omniauth-in-rails-app/
+Client ID: 910214406025-kqt11k5a3lujjcl16u0hm1mlsfhpa3ot.apps.googleusercontent.com
+Client Secret: SlxOckMjhTCLxVcrbnAl9DCC
 
 ##Step 6: Add Admin view
 

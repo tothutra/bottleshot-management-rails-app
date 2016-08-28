@@ -13,3 +13,6 @@ Things I learned building the first app
 
 4-At some point, let the child go.
   Once you get the hang of things, it became really addictive to keep adding and adding information and functionality. For the sake of the review. Stop. It's a bit counter intuitive but I constantly have to refocus myself 
+
+5-Say FUCK however many time you want when working on the OmniAuth part. Cry if need be. I did both.
+https://toadle.me/2015/04/16/fixing-failing-ssl-verification-with-rvm.html
