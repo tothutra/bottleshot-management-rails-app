@@ -15,6 +15,7 @@
   Stub out Navigation Bar: 
     If logged in: Sign Out | My Library | My Order 
     If not logged in: Sign In | Sign Up
+    If Admin: Control Panel 
 
 ##Step 2: Create models
 
@@ -98,3 +99,5 @@
 ##Step 3B: Add CRUD to other models 
 
 ##Step 4: Add Role
+
+##Step 5: Add Admin view

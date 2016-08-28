@@ -1,0 +1,9 @@
+<h2>All Capsules:</h2>
+<ul>
+  <% @capsules.each do |capsule| %>
+    <li><%= link_to capsule.name, admin_capsule_path(capsule) %> - <%=link_to "Delete", admin_capsule_path(capsule), method: "DELETE" %>
+        - <%=link_to "Edit", edit_admin_capsule_path(capsule) %></li>
+  <% end %>
+</ul>
+<br>
+<%= render partial: 'form', locals: {button_text: "Create New Capsule"} %>
