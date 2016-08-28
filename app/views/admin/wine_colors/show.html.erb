@@ -1,0 +1,9 @@
+<h2><%= @wine_color.name %></h2>
+<h4><%= @wine_color.description %></h4>
+<br>
+<p>All shots with this wine color:</p>
+<ul>
+  <% @bottleshots.each do |bottleshot|  %>
+    <li><%= link_to bottleshot.fullname, user_bottleshot_path(bottleshot.user, bottleshot) %></li>
+  <% end %>
+</ul>

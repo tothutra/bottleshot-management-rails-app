@@ -1,0 +1,9 @@
+<h2>All Wine Colors:</h2>
+<ul>
+  <% @wine_colors.each do |wine_color| %>
+    <li><%= link_to wine_color.name, admin_wine_color_path(wine_color) %> - <%=link_to "Delete", admin_wine_color_path(wine_color), method: "DELETE" %>
+        - <%=link_to "Edit", edit_admin_wine_color_path(wine_color) %></li>
+  <% end %>
+</ul>
+<br>
+<%= render partial: 'form', locals: {button_text: "Create New Wine Color"} %>

@@ -1,22 +1,22 @@
-class WineColorsController < ApplicationController
+class Admin::WineColorsController < ApplicationController
 
-  before_action :set_paperstock, except: [:index, :create]
+  before_action :set_wine_color, except: [:index, :create]
 
   def index
-    @paperstocks = Paperstock.all
-    @paperstock = Paperstock.new
+    @wine_colors = WineColor.all
+    @wine_color = WineColor.new
   end
 
   def show
-    @bottleshots = @paperstock.bottleshots    
+    @bottleshots = @wine_color.bottleshots    
   end
 
   def create
-    @paperstock = Paperstock.new(paperstock_params)
-    if @paperstock.save
-      redirect_to admin_paperstocks_path
+    @wine_color = WineColor.new(wine_color_params)
+    if @wine_color.save
+      redirect_to admin_wine_colors_path
     else
-      render 'admin/paperstocks/index'
+      render 'admin/wine_colors/index'
     end    
   end
 
@@ -25,23 +25,23 @@ class WineColorsController < ApplicationController
   end
 
   def update
-    @paperstock.update(paperstock_params)
-    redirect_to admin_paperstocks_path    
+    @wine_color.update(wine_color_params)
+    redirect_to admin_wine_colors_path    
   end
 
   def destroy
-    @paperstock.destroy
-    redirect_to admin_paperstocks_path    
+    @wine_color.destroy
+    redirect_to admin_wine_colors_path    
   end
 
   private
 
-  def set_paperstock
-    @paperstock = Paperstock.find(params[:id])
+  def set_wine_color
+    @wine_color = WineColor.find(params[:id])
   end
 
-  def paperstock_params
-    params.require(:paperstock).permit(:name, :description)
+  def wine_color_params
+    params.require(:wine_color).permit(:name, :description)
   end
 
 end
