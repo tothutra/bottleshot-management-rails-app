@@ -1,9 +1,24 @@
 <%= form_for @user do |f| %>
   <%=f.label :name, "Name: " %><br>
   <%=f.text_field :name %><br>
-  <br>
   <%=f.label :company, "Company: " %><br> 
   <%=f.text_field :company %><br>
+  <%=f.label :website, "Website: " %><br> 
+  <%=f.text_field :website %><br>
+  <%=f.label :address_1, "Address - Line 1: " %><br> 
+  <%=f.text_field :address_1 %><br>
+  <%=f.label :address_2, "Address - Line 2: " %><br> 
+  <%=f.text_field :address_2 %><br>
+  <%=f.label :city, "City: " %><br> 
+  <%=f.text_field :city %><br>
+  <%=f.label :state, "State: " %><br> 
+  <%=f.text_field :state %><br>
+  <%=f.label :country, "Country: " %><br> 
+  <%=f.text_field :country %><br>
+  <%=f.label :zipcode, "Zipcode: " %><br> 
+  <%=f.text_field :zipcode %><br>
+  <%=f.label :telephone, "Telephone: " %><br> 
+  <%=f.text_field :telephone %><br>
   <br>
   <%=f.submit "Update My Profile" %>
 <% end %>

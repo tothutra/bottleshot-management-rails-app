@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160828173421) do
+ActiveRecord::Schema.define(version: 20160828184054) do
 
   create_table "bottle_shapes", force: :cascade do |t|
     t.string   "name"
@@ -81,6 +81,14 @@ ActiveRecord::Schema.define(version: 20160828173421) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "company"
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "zipcode"
+    t.string   "telephone"
+    t.string   "website"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

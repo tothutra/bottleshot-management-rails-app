@@ -2,7 +2,10 @@
 <br>
 <h4>Name: <%= @user.name %><h4>
 <h4>Company: <%= @user.company %></h4>
+<h4>Website: <%= link_to @user.website, @user.website %></h4>
 <h4>Email: <%= @user.email %></h4>
+<h4>Address: <%= @user.full_address %></h4>
+<h4>Telephone: <%= @user.telephone %></h4>
 <br>
 <%= link_to "Edit my profile", edit_user_path(@user) %><br>
 <%= link_to "Change my email or password", edit_user_registration_path(@user) %>

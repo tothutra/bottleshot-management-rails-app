@@ -11,7 +11,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    
+    @user.update(user_params)
+    redirect_to user_path(@user)
   end
 
   private
@@ -21,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user)
+    params.require(:user).permit(:name, :company, :website, :address_1, :address_2, :city, :state, :country, :zipcode, :telephone)
   end
 
 end
