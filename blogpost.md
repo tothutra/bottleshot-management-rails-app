@@ -11,4 +11,5 @@ Things I learned building the first app
 3-Stub out first, fill in the space later.
   Consistently, when building a page, I stubbed out all the elements first to have a good understanding of how I want the UI flow to be.
 
- 
+4-At some point, let the child go.
+  Once you get the hang of things, it became really addictive to keep adding and adding information and functionality. For the sake of the review. Stop. It's a bit counter intuitive but I constantly have to refocus myself 
