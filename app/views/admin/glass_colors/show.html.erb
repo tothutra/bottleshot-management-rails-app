@@ -1,7 +1,7 @@
-<h2><%= @capsule.name %></h2>
-<h4><%= @capsule.description %></h4>
+<h2><%= @glass_color.name %></h2>
+<h4><%= @glass_color.description %></h4>
 <br>
-<p>All shots with this shape:</p>
+<p>All shots with this glass color:</p>
 <ul>
   <% @bottleshots.each do |bottleshot|  %>
     <li><%= link_to bottleshot.fullname, user_bottleshot_path(bottleshot.user, bottleshot) %></li>

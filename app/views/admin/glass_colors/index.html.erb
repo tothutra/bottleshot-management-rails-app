@@ -1,0 +1,9 @@
+<h2>All Glass Colors:</h2>
+<ul>
+  <% @glass_colors.each do |glass_color| %>
+    <li><%= link_to glass_color.name, admin_glass_color_path(glass_color) %> - <%=link_to "Delete", admin_glass_color_path(glass_color), method: "DELETE" %>
+        - <%=link_to "Edit", edit_admin_glass_color_path(glass_color) %></li>
+  <% end %>
+</ul>
+<br>
+<%= render partial: 'form', locals: {button_text: "Create New Glass Color"} %>

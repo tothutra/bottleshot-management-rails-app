@@ -1,0 +1,9 @@
+<h2>All Finishes:</h2>
+<ul>
+  <% @label_finishes.each do |label_finish| %>
+    <li><%= link_to label_finish.name, admin_label_finish_path(label_finish) %> - <%=link_to "Delete", admin_label_finish_path(label_finish), method: "DELETE" %>
+        - <%=link_to "Edit", edit_admin_label_finish_path(label_finish) %></li>
+  <% end %>
+</ul>
+<br>
+<%= render partial: 'form', locals: {button_text: "Create New Finish"} %>
