@@ -1,39 +1,61 @@
 <%= form_for([@user, @bottleshot])  do |f| %>
+    <% if @bottleshot.errors.any? %>
+      <% @bottleshot.errors.each do |message| %>
+        <p class="notice"><%= message %> can't be blank</p>
+      <% end %>
+    <% end %>
+
   <%= f.label :varietal, "Varietal Name:" %>
   <%= f.text_field :varietal %><br>
   <%= f.label :vintage, "Vintage Year:" %>
   <%= f.number_field :vintage %><br>
   <br>
+  <div class="field">
   <%= f.label :bottle_shape_id, "Choose Your Bottle Shape: " %><br>
   <%= f.collection_radio_buttons :bottle_shape_id, BottleShape.all, :id, :name %>
+  </div>
   <br>
   <br>
+  <div class="field">
   <%= f.label :glass_color_id, "Choose Your Glass Color: " %><br>
   <%= f.collection_radio_buttons :glass_color_id, GlassColor.all, :id, :name %>
+  </div>
   <br>
   <br>
+  <div class="field">
   <%= f.label :wine_color_id, "Choose Your Wine Color: " %><br>
   <%= f.collection_radio_buttons :wine_color_id, WineColor.all, :id, :name %>
+  </div>
   <br>
   <br>
+  <div class="field">
   <%= f.label :capsule_id, "Choose Your Capsule: " %><br>
   <%= f.collection_radio_buttons :capsule_id, Capsule.all, :id, :name %>
+  </div>
   <br>
   <br>
+  <div class="field">
   <%= f.label :screenprinted, "Check If Your Label Screenprinted: " %> 
   <%= f.check_box :screenprinted %>
+  </div>
   <br>
   <br>
+  <div class="field">
   <%= f.label :paperstock_id, "Choose Your Label Paperstock: " %><br>
   <%= f.collection_radio_buttons :paperstock_id, Paperstock.all, :id, :name %>
+  </div>
   <br>
   <br>
+  <div class="field">
   <%= f.label :label_finish_id, "Choose Your Label Finish: " %><br>
   <%= f.collection_radio_buttons :label_finish_id, LabelFinish.all, :id, :name %>
+  </div>
   <br>
   <br>
+  <div class="field">
   <%= f.label :label_file, "URL To Label File: " %>
   <%= f.text_field :label_file %><br>
+  </div>
   <br>
   <br>  
   <%= f.submit %>
