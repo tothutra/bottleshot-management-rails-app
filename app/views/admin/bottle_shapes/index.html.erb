@@ -1,0 +1,9 @@
+<h2>All Bottle Shapes:</h2>
+<ul>
+  <% @bottle_shapes.each do |bottle_shape| %>
+    <li><%= link_to bottle_shape.name, admin_bottle_shape_path(bottle_shape) %> - <%=link_to "Delete", admin_bottle_shape_path(bottle_shape), method: "DELETE" %>
+        - <%=link_to "Edit", edit_admin_bottle_shape_path(bottle_shape) %></li>
+  <% end %>
+</ul>
+<br>
+<%= render partial: 'form', locals: {button_text: "Create New Shape"} %>

@@ -1,0 +1,9 @@
+<h2><%= @bottle_shape.name %></h2>
+<h4><%= @bottle_shape.description %></h4>
+<br>
+<p>All shots with this shape:</p>
+<ul>
+  <% @bottleshots.each do |bottleshot|  %>
+    <li><%= link_to bottleshot.fullname, user_bottleshot_path(bottleshot.user, bottleshot) %></li>
+  <% end %>
+</ul>

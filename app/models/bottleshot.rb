@@ -7,6 +7,8 @@ class Bottleshot < ActiveRecord::Base
   belongs_to :paperstock
   belongs_to :label_finish
 
+  validates_presence_of :varietal
+
   def fullname
     "#{self.vintage.to_s} #{self.varietal}"
   end
@@ -33,6 +35,10 @@ class Bottleshot < ActiveRecord::Base
 
   def label_finish_name
     self.label_finish.name if self.label_finish
+  end
+
+  def self.find_open_order
+    where("status = ?", "open order")
   end
 
 end

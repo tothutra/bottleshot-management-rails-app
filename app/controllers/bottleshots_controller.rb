@@ -35,7 +35,7 @@ class BottleshotsController < ApplicationController
   end
 
   def orders
-    @bottleshots = @user.bottleshots.where("status = ?", "open order")
+    @bottleshots = @user.bottleshots.find_open_order
   end
 
   private

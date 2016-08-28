@@ -95,4 +95,6 @@
  
 ##Step 3: Add CRUD functionality to bottleshots
 
+##Step 3B: Add CRUD to other models 
+
 ##Step 4: Add Role

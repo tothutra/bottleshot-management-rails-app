@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  resources :glass_colors
-  resources :label_finishes
-  resources :paperstocks
-  resources :capsules
-  resources :wine_colors
-  resources :bottle_shapes
   devise_for :users
   resources :users do 
     resources :bottleshots
@@ -14,6 +8,18 @@ Rails.application.routes.draw do
   get 'site/home'
 
   root 'site#home'
+
+  namespace :admin do
+    resources :glass_colors, :label_finishes, :paperstocks, :capsules, :wine_colors, :bottle_shapes 
+  end
+
+  #resources :glass_colors
+  #resources :label_finishes
+  #resources :paperstocks
+  #resources :capsules
+  #resources :wine_colors
+  #resources :bottle_shapes
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

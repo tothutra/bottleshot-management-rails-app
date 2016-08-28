@@ -1,3 +1,0 @@
-class BottleShapesController < ApplicationController
-   
-end
