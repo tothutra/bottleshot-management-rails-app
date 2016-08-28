@@ -100,8 +100,9 @@
 
 ##Step 4: Add Role
 
-##Step 5: Add Admin view
+##Step 5: Add OmniAuth
+https://richonrails.com/articles/google-authentication-in-ruby-on-rails
 
-##Step 6: Add OmniAuth
+##Step 6: Add Admin view
 
 ##Step 7: 
