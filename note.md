@@ -101,3 +101,7 @@
 ##Step 4: Add Role
 
 ##Step 5: Add Admin view
+
+##Step 6: Add OmniAuth
+
+##Step 7: 
