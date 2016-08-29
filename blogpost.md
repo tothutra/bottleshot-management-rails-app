@@ -14,5 +14,13 @@ Things I learned building the first app
 4-At some point, let the child go.
   Once you get the hang of things, it became really addictive to keep adding and adding information and functionality. For the sake of the review. Stop. It's a bit counter intuitive but I constantly have to refocus myself 
 
-5-Say FUCK however many time you want when working on the OmniAuth part. Cry if need be. I did both.
+5-Before starting to work on the OmniAuth part, here's a quote for you:
+Men in the arena
+
+If you happen to use Google like me, There's a huge chance that you run into the same error that I got: DA FUCK.
+
+Google pointed me to many article that read more or less like Dothraki to your baby Ruby brain
+Here's the best one I found: 
 https://toadle.me/2015/04/16/fixing-failing-ssl-verification-with-rvm.html
+
+I spent a ful weekend doing nothing else but this. My husband called me nerd an I call myself GOD.
