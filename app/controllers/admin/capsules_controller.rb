@@ -3,7 +3,7 @@ class Admin::CapsulesController < ApplicationController
   before_action :set_capsule, except: [:index, :create]
 
   def index
-    @capsules = Capsule.all
+    @capsules = Capsule.all.sort_by {|capsule| capsule.name }
     @capsule = Capsule.new
   end
 

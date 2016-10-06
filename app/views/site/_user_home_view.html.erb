@@ -1,7 +1,21 @@
 <h1>Hi <%=current_user.name%>, welcome to your page!</h1>
 <br>
+
 <ul>
   <li><a href="#">View my orders</a></li>
   <li><a href="#">View my library</a></li>
   <li><%= link_to "View my profile", user_path(current_user) %></li>
 </ul>
+
+<h3>Account overview:</h3>
+<ul> 
+<p>All my bottle shapes:</p>
+<% current_user.bottle_shapes_names.each do |shape_name| %>
+<ul>
+  <li><%= shape_name %></li>
+</ul>
+<% end %>
+
+
+
+

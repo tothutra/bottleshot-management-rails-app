@@ -3,7 +3,7 @@ class Admin::BottleShapesController < ApplicationController
   before_action :set_bottleshape, except: [:index, :create]
 
   def index
-    @bottle_shapes = BottleShape.all
+    @bottle_shapes = BottleShape.all.sort_by {|shape| shape.name }
     @bottle_shape = BottleShape.new
   end
 

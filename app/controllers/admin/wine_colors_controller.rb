@@ -3,7 +3,7 @@ class Admin::WineColorsController < ApplicationController
   before_action :set_wine_color, except: [:index, :create]
 
   def index
-    @wine_colors = WineColor.all
+    @wine_colors = WineColor.all.sort_by {|color| color.name }
     @wine_color = WineColor.new
   end
 

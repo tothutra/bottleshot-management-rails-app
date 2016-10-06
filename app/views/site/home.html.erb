@@ -1,4 +1,6 @@
-<% if user_signed_in?%>
+<% if user_signed_in? && current_user.admin? %>
+  <%= render 'site/admin_home_view'%>
+<% elsif user_signed_in? && current_user.user? %>
   <%= render 'site/user_home_view'%>
 <% else %>
   <%= render 'site/guest_home_view'%>

@@ -108,4 +108,4 @@ Client Secret: SlxOckMjhTCLxVcrbnAl9DCC
 
 ##Step 6: Add Admin view
 
-##Step 7: 
+##Step 7: Add more Policy

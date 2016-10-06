@@ -3,7 +3,7 @@ class Admin::LabelFinishesController < ApplicationController
   before_action :set_label_finish, except: [:index, :create]
 
   def index
-    @label_finishes = LabelFinish.all
+    @label_finishes = LabelFinish.all.sort_by {|finish| finish.name }
     @label_finish = LabelFinish.new
   end
 

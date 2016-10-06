@@ -4,3 +4,6 @@
     <li><%= link_to bottleshot.fullname, user_bottleshot_path(@user, bottleshot) %></li>
   <% end %>
 </ul>
+<form method="get" action="<%=new_user_bottleshot_path(@user)%>">
+    <button type="submit">Create a new order</button>
+</form>

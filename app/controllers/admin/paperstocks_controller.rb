@@ -3,7 +3,7 @@ class Admin::PaperstocksController < ApplicationController
   before_action :set_paperstock, except: [:index, :create]
 
   def index
-    @paperstocks = Paperstock.all
+    @paperstocks = Paperstock.all.sort_by {|stock| stock.name }
     @paperstock = Paperstock.new
   end
 

@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :bottle_shapes, through: :bottleshots
 
   def full_address
-    "#{self.address_1}, #{self.address_2}, #{self.city}, #{self.state}, #{self.country}, #{self.zipcode}"
+    "#{self.address_1} #{self.address_2} #{self.city} #{self.state} #{self.country} #{self.zipcode}"
   end
 
   def self.from_omniauth(access_token)
@@ -22,6 +22,10 @@ class User < ActiveRecord::Base
          )
      end
     user
+  end
+
+  def bottle_shapes_names
+    self.bottle_shapes.map {|shape| shape.name}
   end
 
 end

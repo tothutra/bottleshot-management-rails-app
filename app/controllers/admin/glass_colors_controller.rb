@@ -3,7 +3,7 @@ class Admin::GlassColorsController < ApplicationController
   before_action :set_glass_color, except: [:index, :create]
 
   def index
-    @glass_colors = GlassColor.all
+    @glass_colors = GlassColor.all.sort_by {|color| color.name }
     @glass_color = GlassColor.new
   end
 
