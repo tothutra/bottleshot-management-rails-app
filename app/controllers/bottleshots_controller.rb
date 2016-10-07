@@ -49,7 +49,7 @@ class BottleshotsController < ApplicationController
   end
 
   def bottleshot_params
-    params.require(:bottleshot).permit(:varietal, :vintage, :bottle_shape_id, :glass_color_id, :wine_color_id, :capsule_id, :screenprinted, :paperstock_id, :label_finish_id, :label_file)
+    params.require(:bottleshot).permit(:varietal, :vintage, :bottle_shape_id, :glass_color_id, :wine_color_id, :capsule_id, :screenprinted, :paperstock_id, :label_finish_id, :label_file, wine_color_attributes: [:name])
   end
 
 end
