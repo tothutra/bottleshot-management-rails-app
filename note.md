@@ -109,3 +109,11 @@ Client Secret: SlxOckMjhTCLxVcrbnAl9DCC
 ##Step 6: Add Admin view
 
 ##Step 7: Add more Policy
+
+*****************************************************
+
+RAILS WITH JQUERY INTERFACE ASSESSMENT
+
+##Step 1: from ugly to....ok
+  - How to use webfont yo?
+  

@@ -8,8 +8,6 @@ class Bottleshot < ActiveRecord::Base
   belongs_to :label_finish
 
   validates_presence_of :varietal
-  accepts_nested_attributes_for :wine_color
-
 
   def fullname
     "#{self.vintage.to_s} #{self.varietal}"

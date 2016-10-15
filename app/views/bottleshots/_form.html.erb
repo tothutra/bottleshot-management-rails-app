@@ -25,11 +25,6 @@
   <div class="field">
   <%= f.label :wine_color_id, "Choose Your Wine Color: " %><br>
   <%= f.collection_radio_buttons :wine_color_id, WineColor.all, :id, :name %>
-
-  <%= f.fields_for :wine_color, @bottleshot.build_wine_color do |w| %>
-    <p>Or add your own color: </p> <%= w.text_field :name %>
-  <% end %>
-
   </div>
   <br>
   <br>
