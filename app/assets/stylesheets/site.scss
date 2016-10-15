@@ -469,3 +469,16 @@ nav.navbar.navbar-default.navbar-fixed-top {
   background-color: transparent;
   border: none;
 }
+
+h1 {
+  text-align: center;
+}
+
+form {
+  margin: 20px;
+}
+
+div.field.input-group.form-group.radio {
+  display: block;
+  float: left;
+}

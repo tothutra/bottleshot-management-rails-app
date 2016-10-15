@@ -25,48 +25,48 @@
     <%= f.text_field :label_file %><br>
     </div>
     <br>
-    <div class="field input-group form-group radio">
-      <%= f.label :bottle_shape_id, "Choose Your Bottle Shape: " %><br>
-      <%= f.collection_radio_buttons(:bottle_shape_id, BottleShape.all, :id, :name) do |b| %>
+
+    <div class="row">
+      <div class="field input-group form-group radio col-lg-4">
+        <%= f.label :bottle_shape_id, "Choose Your Bottle Shape: " %><br>
+        <%= f.collection_radio_buttons(:bottle_shape_id, BottleShape.all, :id, :name) do |b| %>
+          <span><%= b.radio_button %><%= b.label class:"label-radio" %></span><br>
+        <% end %>
+      </div>
+      <div class="field input-group form-group radio col-lg-4">
+        <%= f.label :glass_color_id, "Choose Your Glass Color: " %><br>
+        <%= f.collection_radio_buttons(:glass_color_id, GlassColor.all, :id, :name) do |b| %>
+          <span><%= b.radio_button %><%= b.label class:"label-radio" %></span><br>
+        <% end %>
+      </div>
+      <div class="field input-group form-group radio col-lg-4">
+        <%= f.label :wine_color_id, "Choose Your Wine Color: " %><br>
+        <%= f.collection_radio_buttons(:wine_color_id, WineColor.all, :id, :name) do |b| %>
+          <span><%= b.radio_button %><%= b.label class:"label-radio" %></span><br>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field input-group form-group radio col-md-4">
+        <%= f.label :capsule_id, "Choose Your Capsule: " %><br>
+        <%= f.collection_radio_buttons(:capsule_id, Capsule.all, :id, :name) do |b| %>
+          <span><%= b.radio_button %><%= b.label class:"label-radio" %></span><br>
+        <% end %>
+      </div>
+      <div class="field input-group form-group radio col-md-4">
+      <%= f.label :paperstock_id, "Choose Your Label Paperstock: " %><br>
+      <%= f.collection_radio_buttons(:paperstock_id, Paperstock.all, :id, :name) do |b| %>
         <span><%= b.radio_button %><%= b.label class:"label-radio" %></span><br>
       <% end %>
-    </div>
-    <br>
-    <div class="field input-group form-group radio">
-      <%= f.label :glass_color_id, "Choose Your Glass Color: " %><br>
-      <%= f.collection_radio_buttons(:glass_color_id, GlassColor.all, :id, :name) do |b| %>
+      </div>
+      <div class="field input-group form-group radio col-md-4">
+      <%= f.label :label_finish_id, "Choose Your Label Finish: " %><br>
+      <%= f.collection_radio_buttons(:label_finish_id, LabelFinish.all, :id, :name) do |b| %>
         <span><%= b.radio_button %><%= b.label class:"label-radio" %></span><br>
       <% end %>
-    </div>
-    <br>
-    <div class="field input-group form-group radio">
-      <%= f.label :wine_color_id, "Choose Your Wine Color: " %><br>
-      <%= f.collection_radio_buttons(:wine_color_id, WineColor.all, :id, :name) do |b| %>
-        <span><%= b.radio_button %><%= b.label class:"label-radio" %></span><br>
-      <% end %>
-    </div>
-    <br>
-    <div class="field input-group form-group radio">
-      <%= f.label :capsule_id, "Choose Your Capsule: " %><br>
-      <%= f.collection_radio_buttons(:capsule_id, Capsule.all, :id, :name) do |b| %>
-        <span><%= b.radio_button %><%= b.label class:"label-radio" %></span><br>
-      <% end %>
-    </div>
-    <br>
-    <div class="field input-group form-group radio">
-    <%= f.label :paperstock_id, "Choose Your Label Paperstock: " %><br>
-    <%= f.collection_radio_buttons(:paperstock_id, Paperstock.all, :id, :name) do |b| %>
-      <span><%= b.radio_button %><%= b.label class:"label-radio" %></span><br>
-    <% end %>
-    </div>
-    <br>
-    <div class="field input-group form-group radio">
-    <%= f.label :label_finish_id, "Choose Your Label Finish: " %><br>
-    <%= f.collection_radio_buttons(:label_finish_id, LabelFinish.all, :id, :name) do |b| %>
-      <span><%= b.radio_button %><%= b.label class:"label-radio" %></span><br>
-    <% end %>
-    </div>
-    <br>  
+      </div>
+    </div> 
     <%= f.submit %>
   <% end %>
 </div>
