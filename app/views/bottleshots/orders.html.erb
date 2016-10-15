@@ -1,4 +1,4 @@
-<h2>My Current Orders: </h2>
+<h1>My Current Orders: </h1>
 <ul>
   <% @bottleshots.each do |bottleshot| %>
     <li><%= link_to bottleshot.fullname, user_bottleshot_path(@user, bottleshot) %></li>

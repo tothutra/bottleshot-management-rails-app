@@ -111,12 +111,7 @@ p {
   background-color: transparent;
 }
 
-nav.navbar.navbar-default.navbar-fixed-top {
-  background-color: rgba(255,255,255,.75);
-  border-color: transparent;
-  background-image: none;
-  box-shadow: none;
-}
+
 
 @media (min-width: 768px) {
   .navbar-default {
@@ -459,4 +454,18 @@ img::-moz-selection {
 }
 body {
   webkit-tap-highlight-color: #222222;
+}
+
+/*Custom styling*/
+
+nav.navbar.navbar-default.navbar-fixed-top {
+  background-color: rgba(255,255,255,.75);
+  border-color: transparent;
+  background-image: none;
+  box-shadow: none;
+}
+
+[class*="col-"] {
+  background-color: transparent;
+  border: none;
 }
