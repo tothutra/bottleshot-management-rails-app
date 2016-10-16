@@ -1,13 +1,20 @@
+
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
+
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Outshinery", root_path, class: "navbar-brand" %>
+      <%= link_to "Outshinery", root_path, class: "navbar-brand" %>-->
+      <div id="logoWrapper">
+        <div id="logoImage">
+          <img src="//static1.squarespace.com/static/55e38929e4b06d04a995c0c8/t/56e4ebbc746fb91c91d2f3e1/1476475343430/?format=1500w" alt="Outshinery | Professional and consistent bottle shots before your beverage is bottled" data-pin-nopin="true">
+        </div>
+      </div>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
         <%= render 'layouts/nav_links_for_auth' %> 
