@@ -58,7 +58,7 @@ h6 {
   letter-spacing: 1px;
 }
 p {
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
@@ -466,7 +466,7 @@ body {
 
 @media (min-width: 1200px) {
   .container {
-    width: 1012px;
+    width: 1046px;
   }
 }
 
@@ -530,15 +530,38 @@ div.field.input-group.form-group.radio {
   float: left;
 }
 
-.btn.btn-primary.btn-lg {
+.btn.btn-primary {
   background-color: #97f6b1;
-  color: #4d5152;
   border-radius: 3px;
   border: none;
   margin: 20px 0;
-  font-weight: 700;
   padding: 10px 40px;
+  color: #4d5152;
+  font-weight: 700;
+  box-shadow: 1px 1px 1px #888888;
 }
+
+.btn.btn-primary.btn-lg {
+  a {
+    text-decoration: none;
+    color: #4d5152;
+    font-weight: 700;
+  }
+}
+
+.btn.btn-primary.btn-md {
+  margin-right: 15px;
+  a {
+    text-decoration: none;
+    color: #4d5152;
+    font-weight: 700;
+  }
+}
+
+.btn.btn-primary.btn-md:hover {
+  background-color: #f27f13;
+}
+
 
 /*Admin Home View*/
 .control-panel-home {

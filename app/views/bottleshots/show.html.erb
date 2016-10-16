@@ -1,15 +1,31 @@
-<h1><%= @bottleshot.fullname %></h1>
-<p>Bottle Shape: <%= @bottleshot.bottle_shape_name %></p>
-<p>Glass Color: <%= @bottleshot.glass_color_name %></p>
-<p>Wine Color: <%= @bottleshot.wine_color_name %></p>
-<p>Capsule: <%= @bottleshot.capsule_name %></p>
-<p>Screenprinted: <%= @bottleshot.screenprinted ? "Yes" : "No" %></p>
-<p>Paperstock: <%= @bottleshot.paperstock_name %></p>
-<p>Label Finish: <%= @bottleshot.label_finish_name %></p>
-<p>Label File: <%= @bottleshot.label_file %></p>
-<br>
-<% if @bottleshot.status == "open order" %>
-  <%=link_to "Delete", user_bottleshot_path(@user, @bottleshot), method: "DELETE" %>
-  <br>
-  <%=link_to "Edit", edit_user_bottleshot_path(@user, @bottleshot) %>
-<% end %>
+<div class="row">
+    <div class="col-md-12">
+    <h1>Bottle shot information</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8">
+    <h3><%= @bottleshot.fullname %></h3>
+    <br>
+    <p>Bottle Shape: <%= @bottleshot.bottle_shape_name %></p>
+    <p>Glass Color: <%= @bottleshot.glass_color_name %></p>
+    <p>Wine Color: <%= @bottleshot.wine_color_name %></p>
+    <p>Capsule: <%= @bottleshot.capsule_name %></p>
+    <p>Screenprinted: <%= @bottleshot.screenprinted ? "Yes" : "No" %></p>
+    <p>Paperstock: <%= @bottleshot.paperstock_name %></p>
+    <p>Label Finish: <%= @bottleshot.label_finish_name %></p>
+    <p>Label File: <%= @bottleshot.label_file %></p>
+    <br>
+    <% if @bottleshot.status == "open order" %>
+      <button class="btn btn-primary btn-md">
+        <%=link_to "Delete", user_bottleshot_path(@user, @bottleshot), method: "DELETE" %>
+      </button>
+      <button class="btn btn-primary btn-md">
+        <%=link_to "Edit", edit_user_bottleshot_path(@user, @bottleshot) %>
+      </button>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <%= render "layouts/user_control_panel"%>
+  </div>
+</div>

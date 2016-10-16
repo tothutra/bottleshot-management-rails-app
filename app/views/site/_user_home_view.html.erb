@@ -1,4 +1,8 @@
-<h1>Hi <%=current_user.name%>, welcome to your page!</h1>
+<div class="row">
+  <div class="col-md-12">
+    <h1>Hi <%=current_user.name%>, welcome to your page!</h1>
+  </div>
+</div>
 <div class="row">
   <div class="col-md-8">
     <div class="user account-overview">
@@ -14,29 +18,7 @@
     </div>
   </div>
   <div class="col-md-4">
-    <div class="user control-panel">
-      <h3>I want to:</h3>
-      <a href="#">
-        <div class="option">
-          View and manage my new orders
-        </div>
-      </a>
-      <a href="#">
-        <div class="option">
-          Visit my bottle shot library
-        </div>
-      </a>
-      <a href="#">
-        <div class="option">
-          Place a new order
-        </div>
-      </a>
-      <a href="#">
-        <div class="option">
-          Talk to someone at Outshinery
-        </div>
-      </a>
-    </div>
+    <%= render "layouts/user_control_panel"%>
   </div>
 </div>
 

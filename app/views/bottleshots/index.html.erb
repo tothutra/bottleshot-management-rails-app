@@ -1,16 +1,27 @@
-<h1>All of my bottleshots:</h1>
-<br>
-<ul>
-  <% @bottleshots.each do |bottleshot| %>
-    <li><%= link_to bottleshot.fullname, user_bottleshot_path(@user, bottleshot) %> - <%= bottleshot.status %> 
-      <% if bottleshot.status == "open order" %>
-        - <%=link_to "Delete", user_bottleshot_path(@user, bottleshot), method: "DELETE" %>
-        - <%=link_to "Edit", edit_user_bottleshot_path(@user, bottleshot) %>
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>My Library</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8">
+    <h3>All of my bottle shots</h3>
+    <ul>
+      <% @bottleshots.each do |bottleshot| %>
+        <li><%= link_to bottleshot.fullname, user_bottleshot_path(@user, bottleshot) %> - <%= bottleshot.status %> 
+          <% if bottleshot.status == "open order" %>
+            - <%=link_to "Delete", user_bottleshot_path(@user, bottleshot), method: "DELETE" %>
+            - <%=link_to "Edit", edit_user_bottleshot_path(@user, bottleshot) %>
+          <% end %>
+        </li>
       <% end %>
-    </li>
-  <% end %>
-</ul>
-<br>
-<form method="get" action="<%=new_user_bottleshot_path(@user)%>">
-    <button type="submit">Add A New Bottleshot</button>
-</form>
+    </ul>
+    <form method="get" action="<%=new_user_bottleshot_path(@user)%>">
+        <button type="submit">Add A New Bottleshot</button>
+    </form>
+  </div>
+  <div class="col-md-4">
+    <%= render "layouts/user_control_panel"%>
+  </div>
+</div>
