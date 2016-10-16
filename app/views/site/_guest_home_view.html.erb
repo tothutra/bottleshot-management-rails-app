@@ -1,1 +1,21 @@
-<h1>Please <a href="<%=new_user_session_path%>">Sign In</a> or <a href="<%=new_user_registration_path%>">Sign Up</a> to order your bottleshots!</h1>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8 wrapper">
+    <h1>Oops! You have to be logged in to continue!</h1>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3">
+    <a href="<%=new_user_registration_path%>">
+      <center><button type="button" class="btn btn-primary btn-lg">Sign Up</button></center>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="<%=new_user_session_path%>">
+      <center><button type="button" class="btn btn-primary btn-lg">Sign In</button></center>
+    </a>
+  </div>
+  <div class="col-md-3"></div>
+</div>

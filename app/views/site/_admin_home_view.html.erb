@@ -1,21 +1,28 @@
-<h2>Control Panel</h2>
+<h1>Control Panel</h1>
+<br>
 
-<div>
-  <h3>Manage users</h3>
-  <ul>
-    <li>View all users</li>
-    <li>View all open orders</li>
-  </ul>
-</div>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="control-panel-home">
+      <center><h3>Manage users</h3></center>
+      <ul>
+        <li>View all users</li>
+        <li>View all open orders</li>
+      </ul>
+    </div>
+  </div>
 
-<div>
-  <h3>Manage assets</h3>
-  <ul>
-    <li><%= link_to "All Bottle Shapes", admin_bottle_shapes_path %></li>
-    <li><%= link_to "All Glass Colors", admin_glass_colors_path %></li>
-    <li><%= link_to "All Wine Colors", admin_wine_colors_path %></li>
-    <li><%= link_to "All Capsules", admin_capsules_path %></li>
-    <li><%= link_to "All Paperstocks", admin_paperstocks_path %></li>
-    <li><%= link_to "All Label Finishes", admin_label_finishes_path %></li>
-  </ul>
+  <div class="col-lg-6">
+    <div class="control-panel-home">
+      <center><h3>Manage assets</h3></center>
+      <ul>
+        <li><%= link_to "All Bottle Shapes", admin_bottle_shapes_path %></li>
+        <li><%= link_to "All Glass Colors", admin_glass_colors_path %></li>
+        <li><%= link_to "All Wine Colors", admin_wine_colors_path %></li>
+        <li><%= link_to "All Capsules", admin_capsules_path %></li>
+        <li><%= link_to "All Paperstocks", admin_paperstocks_path %></li>
+        <li><%= link_to "All Label Finishes", admin_label_finishes_path %></li>
+      </ul>
+    </div>
+  </div>
 </div>

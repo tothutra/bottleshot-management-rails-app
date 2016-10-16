@@ -7,12 +7,38 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'layouts/nav_bar_fixed_to_top' %>
+  <div id="navigation">
+    <%= render 'layouts/nav_bar_fixed_to_top' %>
+  </div>   
   <div class="container">
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %>
-    <%= yield %>
+    <div class="main-wrapper">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+      <%= yield %>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="container">
+      <nav id="secondaryNavigation">   
+        <div class="footer-nav col-md-4">
+          <a href="http://outshinery.com">
+            <span>Outshinery Homepage</span>
+          </a>
+        </div> 
+        <div class="footer-nav col-md-4">
+          <a href="mailto:info@outshinery.com">
+            <span>Email us!</span>
+          </a>
+        </div> 
+        <div class="footer-nav col-md-4">
+          <a href="http://www.lauriemillotte.com/" target="_blank">
+            <span>Laurie's design work</span>
+          </a>
+        </div>   
+      </nav>
+    </div>
+    <div id="siteInfo"><a href="mailto:info@outshinery.com" class="site-email">info@outshinery.com</a></div>
   </div>
 </body>
 </html>

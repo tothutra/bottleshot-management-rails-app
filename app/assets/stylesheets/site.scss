@@ -458,11 +458,31 @@ body {
 
 /*Custom styling*/
 
+body {
+  color: #4d5152;
+  display: block;
+  min-height: 400px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1012px;
+  }
+}
+
+.main-wrapper {
+  min-height: 500px;
+}
+
 nav.navbar.navbar-default.navbar-fixed-top {
   background-color: rgba(255,255,255,.75);
   border-color: transparent;
   background-image: none;
   box-shadow: none;
+}
+
+.navbar-default {
+  font-weight: 400;
 }
 
 [class*="col-"] {
@@ -474,11 +494,96 @@ h1 {
   text-align: center;
 }
 
+ul {
+  list-style-type: none;
+}
+
 form {
   margin: 20px;
+  h5 label {
+    font-weight: 700;
+  }
+}
+.field.input-group.form-group.radio.col-lg-4 {
+  padding: 15px;
 }
 
 div.field.input-group.form-group.radio {
   display: block;
   float: left;
+}
+
+.btn.btn-primary.btn-lg {
+  background-color: #97f6b1;
+  color: #4d5152;
+  border-radius: 3px;
+  border: none;
+  margin: 20px 0;
+  font-weight: 700;
+  padding: 10px 40px;
+}
+
+/*Admin Home View*/
+.control-panel-home {
+  padding: 15px 60px;
+  border: 2px solid #4d5152;
+  border-radius: 4px;
+  height: 250px;
+}
+
+/*Footer*/
+
+#footer {
+  background-color: #4d5152;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  #secondaryNavigation {
+    text-align: center;
+    a {
+      span {
+        font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 2px;
+        font-size: 11px;
+        color: #c1fad0;
+      };
+      span:hover {
+        color: #97f6b1;
+        text-decoration: none;
+        outline: none;
+      };
+      text-decoration: none;
+    };
+  };
+  #siteInfo {
+    text-align: center;
+    a {
+      font-size: 11px;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 1px;
+      font-weight: 400;
+      font-style: normal;
+      color: #212326;
+    };
+  };  
+}
+
+.user {
+  account-overview {
+    margin: 15px;
+    padding: 15px;
+  };
+  control-panel {
+    margin: 15px;
+    padding: 15px;
+    li a {
+      text-decoration: none;
+      color: #4d5152;
+    };
+  };
 }
