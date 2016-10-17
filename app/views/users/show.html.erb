@@ -13,9 +13,12 @@
     <h4>Email: <%= @user.email %></h4>
     <h4>Address: <%= @user.full_address %></h4>
     <h4>Telephone: <%= @user.telephone %></h4>
-    <br>
-    <%= link_to "Edit my profile", edit_user_path(@user) %><br>
-    <%= link_to "Change my email or password", edit_user_registration_path(@user) %>   
+    <button class="btn btn-primary btn-md">
+      <%= link_to "Edit my profile", edit_user_path(@user) %>
+    </button>
+    <button class="btn btn-primary btn-md">
+      <%= link_to "Change my email or password", edit_user_registration_path(@user) %> 
+    </button>
   </div>
   <div class="col-md-4">
     <%= render "layouts/user_control_panel"%>
