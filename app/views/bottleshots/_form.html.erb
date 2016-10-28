@@ -79,6 +79,31 @@
         </ul>
       </div>
     </div> 
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <div class="">
+          <div class="field input-group form-group">
+            <h5>Choose your add-on options:</h5>
+            <ul>
+              <%= f.collection_check_boxes(:add_on_ids, AddOn.all, :id, :name) do |b| %>
+                <li><%= b.check_box %><%= b.label class:"label-radio" %></li>
+              <% end %>
+            </ul>
+            <!--<%= f.collection_check_boxes :add_on_ids, AddOn.all, :id, :name %>-->     
+          </div>
+          <div class="field input-group form-group">
+            <h5>
+              Or tell us your own request: 
+                <%= f.fields_for :add_ons, @bottleshot.add_ons.build do |a| %>
+                  <%= a.text_field :name %> 
+                <% end %>
+            </h5>
+          </div> 
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
     <center><%= f.submit class: "btn btn-primary btn-lg" %></center>
   <% end %>
 </div>

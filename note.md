@@ -110,6 +110,13 @@ Client Secret: SlxOckMjhTCLxVcrbnAl9DCC
 
 ##Step 7: Add more Policy
 
+##Step 8: Add BeautyShots to Bottleshots
+
+Bottle shots has_many AddOns
+AddOn has_many bottleshot
+
+
+
 *****************************************************
 
 RAILS WITH JQUERY INTERFACE ASSESSMENT

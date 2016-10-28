@@ -15,6 +15,7 @@
     <p>Paperstock: <%= @bottleshot.paperstock_name %></p>
     <p>Label Finish: <%= @bottleshot.label_finish_name %></p>
     <p>Label File: <%= @bottleshot.label_file %></p>
+    <p>Add On Options: <%= @bottleshot.add_on_names.join(", ") %> </p>
     <br>
     <% if @bottleshot.status == "open order" %>
       <button class="btn btn-primary btn-md">
