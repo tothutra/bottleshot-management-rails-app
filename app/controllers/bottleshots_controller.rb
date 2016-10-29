@@ -7,6 +7,13 @@ class BottleshotsController < ApplicationController
     @bottleshots = @user.bottleshots
   end
 
+  def show
+    respond_to do |format|
+      format.html {render :show}
+      format.json {render json: @bottleshot}
+    end
+  end
+
   def new
     @bottleshot = Bottleshot.new
   end
