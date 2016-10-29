@@ -123,4 +123,10 @@ RAILS WITH JQUERY INTERFACE ASSESSMENT
 
 ##Step 1: from ugly to....ok
   - How to use webfont yo?
+##Step 2: building IPA
+
+
+##Step  : Pagination
+
+##Step  : Active Admin 
   
