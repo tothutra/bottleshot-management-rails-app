@@ -1,10 +1,14 @@
 class BottleshotsController < ApplicationController
 
   before_action :find_user 
-  before_action :set_bottleshot, only: [:show, :edit, :update, :destroy] 
+  before_action :set_bottleshot, only: [:show, :edit, :update, :destroy]
 
   def index
     @bottleshots = @user.bottleshots
+    respond_to do |format|
+      format.html {render :index}
+      format.json {render json: @bottleshots}
+    end
   end
 
   def show
