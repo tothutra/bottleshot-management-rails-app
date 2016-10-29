@@ -4,6 +4,10 @@ class UsersController < ApplicationController
 
   def show
     authorize @user
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render json: @user}
+    end
   end
 
   def edit
