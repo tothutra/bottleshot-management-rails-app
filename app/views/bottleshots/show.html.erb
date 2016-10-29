@@ -16,7 +16,6 @@
     <p>Label Finish: <%= @bottleshot.label_finish_name %></p>
     <p>Label File: <%= @bottleshot.label_file %></p>
     <p>Add On Options: <%= @bottleshot.add_on_names.join(", ") %> </p>
-    <br>
     <% if @bottleshot.status == "open order" %>
       <button class="btn btn-primary btn-md">
         <%=link_to "Delete", user_bottleshot_path(@user, @bottleshot), method: "DELETE" %>
@@ -24,9 +23,15 @@
       <button class="btn btn-primary btn-md">
         <%=link_to "Edit", edit_user_bottleshot_path(@user, @bottleshot) %>
       </button>
-    <% end %>
+    <% end %><br>
+    <button class="next-bottleshot btn btn-primary btn-md" data-id="<%= @bottleshot.id %>" >Next</button>
   </div>
   <div class="col-md-4">
     <%= render "layouts/user_control_panel"%>
   </div>
 </div>
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    //Stuff
+  })
+</script>
