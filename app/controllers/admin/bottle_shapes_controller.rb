@@ -5,6 +5,7 @@ class Admin::BottleShapesController < ApplicationController
   def index
     @bottle_shapes = BottleShape.all.sort_by {|shape| shape.name }
     @bottle_shape = BottleShape.new
+    authorize current_user
   end
 
   def show
