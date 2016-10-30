@@ -5,26 +5,28 @@
 </div>
 <div class="row">
   <div class="col-md-8">
-    <h3><%= @bottleshot.fullname %></h3>
+    <h3 class="bottleshot-name"><%= @bottleshot.fullname %></h3>
     <br>
-    <p>Bottle Shape: <%= @bottleshot.bottle_shape_name %></p>
-    <p>Glass Color: <%= @bottleshot.glass_color_name %></p>
-    <p>Wine Color: <%= @bottleshot.wine_color_name %></p>
-    <p>Capsule: <%= @bottleshot.capsule_name %></p>
-    <p>Screenprinted: <%= @bottleshot.screenprinted ? "Yes" : "No" %></p>
-    <p>Paperstock: <%= @bottleshot.paperstock_name %></p>
-    <p>Label Finish: <%= @bottleshot.label_finish_name %></p>
-    <p>Label File: <%= @bottleshot.label_file %></p>
-    <p>Add On Options: <%= @bottleshot.add_on_names.join(", ") %> </p>
-    <% if @bottleshot.status == "open order" %>
-      <button class="btn btn-primary btn-md">
-        <%=link_to "Delete", user_bottleshot_path(@user, @bottleshot), method: "DELETE" %>
-      </button>
-      <button class="btn btn-primary btn-md">
-        <%=link_to "Edit", edit_user_bottleshot_path(@user, @bottleshot) %>
-      </button>
-    <% end %><br>
-    <button class="next-bottleshot btn btn-primary btn-md" data-id="<%= @bottleshot.id %>" >Next</button>
+    <p class="bottle-shape" >Bottle Shape: <%= @bottleshot.bottle_shape_name %></p>
+    <p class="glass-color">Glass Color: <%= @bottleshot.glass_color_name %></p>
+    <p class="wine-color">Wine Color: <%= @bottleshot.wine_color_name %></p>
+    <p class="capsule">Capsule: <%= @bottleshot.capsule_name %></p>
+    <p class="screenprinted">Screenprinted: <%= @bottleshot.screenprinted ? "Yes" : "No" %></p>
+    <p class="paperstock">Paperstock: <%= @bottleshot.paperstock_name %></p>
+    <p class="label-finish">Label Finish: <%= @bottleshot.label_finish_name %></p>
+    <p class="label-file">Label File: <%= @bottleshot.label_file %></p>
+    <p class="add-on">Add On Options: <%= @bottleshot.add_on_names.join(", ") %> </p>
+    <div class="edit-bottleshot">
+      <% if @bottleshot.status == "open order" %>
+        <button class="btn btn-primary btn-md">
+          <%=link_to "Delete", user_bottleshot_path(@user, @bottleshot), method: "DELETE" %>
+        </button>
+        <button class="btn btn-primary btn-md">
+          <%=link_to "Edit", edit_user_bottleshot_path(@user, @bottleshot) %>
+        </button>
+      <% end %>
+    </div>
+    <button class="next-bottleshot btn btn-primary btn-md" data-id="<%= @bottleshot.id %>" data-user-id="<%= @bottleshot.user.id %>" >Next</button>
   </div>
   <div class="col-md-4">
     <%= render "layouts/user_control_panel"%>
@@ -32,6 +34,12 @@
 </div>
 <script type="text/javascript" charset="utf-8">
   $(function() {
-    //Stuff
+    $(".next-bottleshot").onclick(function() {
+      //var nextId = parseInt($(".next-bottleshot").attr("data-id")) + 1
+      //var userId = parseInt($(".next-bottleshot").attr("data-user-id"))
+      //$.get("/users/" + userId + /bottleshots/ + nextId + ".json", function(data) {
+      //  $(".bottleshot-name").html(data.)
+      //})
+    })
   })
 </script>
