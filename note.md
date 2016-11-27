@@ -125,6 +125,10 @@ RAILS WITH JQUERY INTERFACE ASSESSMENT
   - How to use webfont yo?
 ##Step 2: building APIs
 
+##Step 3: Add JS action
+
+Add next button to Show page
+Add filter button to Index page
 
 ##Step  : Pagination
 

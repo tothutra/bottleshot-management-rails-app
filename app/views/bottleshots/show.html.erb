@@ -6,6 +6,7 @@
 <div class="row">
   <div class="col-md-8">
     <h3 class="bottleshot-name"><%= @bottleshot.fullname %></h3>
+
     <br>
     <p class="bottle-shape" >Bottle Shape: <%= @bottleshot.bottle_shape_name %></p>
     <p class="glass-color">Glass Color: <%= @bottleshot.glass_color_name %></p>
@@ -34,12 +35,19 @@
 </div>
 <script type="text/javascript" charset="utf-8">
   $(function() {
-    $(".next-bottleshot").onclick(function() {
-      //var nextId = parseInt($(".next-bottleshot").attr("data-id")) + 1
-      //var userId = parseInt($(".next-bottleshot").attr("data-user-id"))
-      //$.get("/users/" + userId + /bottleshots/ + nextId + ".json", function(data) {
-      //  $(".bottleshot-name").html(data.)
-      //})
-    })
+    $(".next-bottleshot").on("click", (function() {
+      var nextId = parseInt($(".next-bottleshot").attr("data-id")) + 1
+      var userId = parseInt($(".next-bottleshot").attr("data-user-id"))
+      $.get("/users/" + userId + /bottleshots/ + nextId + ".json", function(data) {
+        $(".bottleshot-name").text(data["vintage"] + " ")
+        $(".bottleshot-name").append(data["varietal"])
+        $(".bottle-shape").text(data["bottle_shape"]["name"])
+        $(".glass-color").text(data["glass_color"]["name"])
+        $(".wine-color").text(data["wine_color"]["name"])
+        $(".capsule").text(data["capsule"]["name"])
+        $(".paperstock").text(data["paperstock"]["name"])
+        $(".next-bottleshot").attr("data-id", data["id"])
+      })
+    }))
   })
 </script>
