@@ -6,5 +6,7 @@ class BottleshotSerializer < ActiveModel::Serializer
   has_one :wine_color, serializer: SimpleWineColorSerializer
   has_one :capsule, serializer: SimpleGlassColorSerializer
   has_one :paperstock, serializer: SimplePaperstockSerializer
+  has_one :label_finish, serializer: SimpleLabelFinishSerializer
   has_many :add_ons, serializer: SimpleAddOnSerializer
+
 end
