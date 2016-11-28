@@ -5,18 +5,17 @@
 </div>
 <div class="row">
   <div class="col-md-8">
-    <h3 class="bottleshot-name"><%= @bottleshot.fullname %></h3>
+    <div><h3 class="bottleshot-name"></h3></div>
+    <div>Bottle Shape: <span class="bottle-shape"></span></div>
+    <div>Glass Color: <span class="glass-color"></span></div>
+    <div>Wine Color: <span class="wine-color"></span></div>
+    <div>Capsule: <span class="capsule"></span></div>
+    <div>Screenprinted: <span class="screenprinted"></span></div>
+    <div>Paperstock: <span class="paperstock"></span></div>
+    <div>Label Finish: <span class="label-finish"></span></div>
+    <div>Label File: <span class="label-file"></span></div>
+    <div>Add On Options: <span class="add-on"></span></div>
 
-    <br>
-    <p class="bottle-shape" >Bottle Shape: <%= @bottleshot.bottle_shape_name %></p>
-    <p class="glass-color">Glass Color: <%= @bottleshot.glass_color_name %></p>
-    <p class="wine-color">Wine Color: <%= @bottleshot.wine_color_name %></p>
-    <p class="capsule">Capsule: <%= @bottleshot.capsule_name %></p>
-    <p class="screenprinted">Screenprinted: <%= @bottleshot.screenprinted ? "Yes" : "No" %></p>
-    <p class="paperstock">Paperstock: <%= @bottleshot.paperstock_name %></p>
-    <p class="label-finish">Label Finish: <%= @bottleshot.label_finish_name %></p>
-    <p class="label-file">Label File: <%= @bottleshot.label_file %></p>
-    <p class="add-on">Add On Options: <%= @bottleshot.add_on_names.join(", ") %> </p>
     <div class="edit-bottleshot">
       <% if @bottleshot.status == "open order" %>
         <button class="btn btn-primary btn-md">
@@ -33,6 +32,29 @@
     <%= render "layouts/user_control_panel"%>
   </div>
 </div>
+<script type="text/javascript">
+  $( document ).ready(function() {
+    var id = parseInt($(".next-bottleshot").attr("data-id"))
+    var userId = parseInt($(".next-bottleshot").attr("data-user-id"))
+    $.get("/users/" + userId + /bottleshots/ + id + ".json", function(data) {
+      $(".bottleshot-name").text(data["vintage"] + " ")
+      $(".bottleshot-name").append(data["varietal"])
+      $(".bottle-shape").text(data["bottle_shape"]["name"])
+      $(".glass-color").text(data["glass_color"]["name"])
+      $(".wine-color").text(data["wine_color"]["name"])
+      $(".capsule").text(data["capsule"]["name"])
+      $(".paperstock").text(data["paperstock"]["name"])
+      $(".label-finish").text(data["label_finish"]["name"])
+      $(".next-bottleshot").attr("data-id", data["id"])
+      if (data["screenprinted"] == true ) {
+        $(".screenprinted").text("Yes")
+      } else {
+        $(".screenprinted").text("No")
+      }
+
+    })
+  });
+</script>
 <script type="text/javascript" charset="utf-8">
   $(function() {
     $(".next-bottleshot").on("click", (function() {
@@ -46,7 +68,13 @@
         $(".wine-color").text(data["wine_color"]["name"])
         $(".capsule").text(data["capsule"]["name"])
         $(".paperstock").text(data["paperstock"]["name"])
+        $(".label-finish").text(data["label_finish"]["name"])
         $(".next-bottleshot").attr("data-id", data["id"])
+        if (data["screenprinted"] == true ) {
+          $(".screenprinted").text("Yes")
+        } else {
+          $(".screenprinted").text("No")
+        }
       })
     }))
   })
