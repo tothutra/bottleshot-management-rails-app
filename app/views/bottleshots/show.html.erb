@@ -51,7 +51,11 @@
       } else {
         $(".screenprinted").text("No")
       }
-
+      var add_ons = []
+      data["add_ons"].forEach(function(add_on) {
+        add_ons.push(add_on["name"])
+      })
+      $(".add-on").text(add_ons.join(", "))
     })
   });
 </script>
@@ -75,6 +79,11 @@
         } else {
           $(".screenprinted").text("No")
         }
+        var add_ons = []
+        data["add_ons"].forEach(function(add_on) {
+          add_ons.push(add_on["name"])
+        })
+        $(".add-on").text(add_ons.join(", "))
       })
     }))
   })
