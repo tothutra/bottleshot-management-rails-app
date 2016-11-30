@@ -6,6 +6,13 @@
 </div>
 <div class="row">
   <div class="col-md-8">
+
+    <div>
+      <ul id="bottleshot-index" data-user-id="<%= @user.id %>">
+        
+      </ul>
+    </div>
+
     <h3>All of my bottle shots</h3>
     <ul>
       <% @bottleshots.each do |bottleshot| %>
@@ -25,3 +32,15 @@
     <%= render "layouts/user_control_panel"%>
   </div>
 </div>
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+    var userId = parseInt($.("#bottleshot-index").attr("data-user-id"))
+    $.get("/users/" + userId + "/bottleshots.json", function(data) {
+      data.forEach(function(bottleshot) {
+        $("ul").add("li")
+
+      })
+    })
+  });
+</script>

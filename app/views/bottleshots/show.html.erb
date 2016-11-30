@@ -36,7 +36,7 @@
   $( document ).ready(function() {
     var id = parseInt($(".next-bottleshot").attr("data-id"))
     var userId = parseInt($(".next-bottleshot").attr("data-user-id"))
-    $.get("/users/" + userId + /bottleshots/ + id + ".json", function(data) {
+    $.get("/users/" + userId + "/bottleshots/" + id + ".json", function(data) {
       $(".bottleshot-name").text(data["vintage"] + " ")
       $(".bottleshot-name").append(data["varietal"])
       $(".bottle-shape").text(data["bottle_shape"]["name"])
@@ -64,7 +64,7 @@
     $(".next-bottleshot").on("click", (function() {
       var nextId = parseInt($(".next-bottleshot").attr("data-id")) + 1
       var userId = parseInt($(".next-bottleshot").attr("data-user-id"))
-      $.get("/users/" + userId + /bottleshots/ + nextId + ".json", function(data) {
+      $.get("/users/" + userId + "/bottleshots/" + nextId + ".json", function(data) {
         $(".bottleshot-name").text(data["vintage"] + " ")
         $(".bottleshot-name").append(data["varietal"])
         $(".bottle-shape").text(data["bottle_shape"]["name"])
