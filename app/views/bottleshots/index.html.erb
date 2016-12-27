@@ -7,13 +7,12 @@
 <div class="row">
   <div class="col-md-8">
 
-    <div>
-      <ul id="bottleshot-index" data-user-id="<%= @user.id %>">
-        
-      </ul>
-    </div>
-
     <h3>All of my bottle shots</h3>
+
+    <ul id="bottleshot-index" data-user-id="<%= @user.id %>">
+
+    </ul>
+
     <ul>
       <% @bottleshots.each do |bottleshot| %>
         <li><%= link_to bottleshot.fullname, user_bottleshot_path(@user, bottleshot) %> - <%= bottleshot.status %> 
@@ -35,11 +34,14 @@
 
 <script type="text/javascript">
   $( document ).ready(function() {
-    var userId = parseInt($.("#bottleshot-index").attr("data-user-id"))
+    var userId = parseInt($("#bottleshot-index").attr("data-user-id"))
     $.get("/users/" + userId + "/bottleshots.json", function(data) {
       data.forEach(function(bottleshot) {
-        $("ul").add("li")
+        var li = '<li class="bottleshot-info"><span><a class="bottleshot-varietal" href="">' + bottleshot["varietal"] + '</a></span> - <span>' + bottleshot["vintage"] + " - " + bottleshot["status"] + '</span></li>'
+        $("#bottleshot-index").append(li)
+        if (bottleshot["status"] == "open order") {
 
+        }
       })
     })
   });
