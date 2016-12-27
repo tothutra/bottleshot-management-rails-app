@@ -3,4 +3,33 @@
     <h1>Order a new bottleshot:</h1>
     <%= render 'bottleshots/form' %>
   </div>
+  <div class="col-md-12" id="new-bottleshot" data-user-id="<%= @user.id %>">
+    <div><h3 class="bottleshot-name"></h3></div>
+    <div>Bottle Shape: <span class="bottle-shape"></span></div>
+    <div>Glass Color: <span class="glass-color"></span></div>
+    <div>Wine Color: <span class="wine-color"></span></div>
+    <div>Capsule: <span class="capsule"></span></div>
+    <div>Screenprinted: <span class="screenprinted"></span></div>
+    <div>Paperstock: <span class="paperstock"></span></div>
+    <div>Label Finish: <span class="label-finish"></span></div>
+    <div>Label File: <span class="label-file"></span></div>
+    <div>Add On Options: <span class="add-on"></span></div>
+  </div>
+
+  <script type="text/javascript" charset="utf-8">
+    $(function() {
+      $("form").on("submit", function(event) {
+        event.preventDefault();
+        var userId = parseInt($("#new-bottleshot").attr("data-user-id"))
+        var values = $(this).serialize()
+        var posting = $.post("/users/" + userId + "/bottleshots", values)
+        posting.done(function(data) {
+          $(".bottleshot-name").text(data["vintage"] + " ")
+          $(".bottleshot-name").append(data["varietal"])
+        })
+      })
+    })
+
+  </script>
+
 </div>
