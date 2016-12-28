@@ -1,28 +1,16 @@
-== README
+# Application description
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Aplication designed for Outshinery.com to manage clients' orders for bottleshots.
 
-Things you may want to cover:
+# Simple installation guide
 
-* Ruby version
+To run, clone the repository on to your computer.
+Open Terminal and navigate to the repo's directory
+Type "rails s". Hit Enter.
+Open "http://localhost:3000" on your browser
 
-* System dependencies
+Enjoy!
 
-* Configuration
+# Contributor's guide
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+# Link to the licensing files
