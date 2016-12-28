@@ -25,10 +25,11 @@ class BottleshotsController < ApplicationController
   def create
     @bottleshot = @user.bottleshots.build(bottleshot_params)
     if @bottleshot.save
-    redirect_to user_bottleshots_path(@user)
+      render json: @bottleshot, status: 201
     else
       render 'bottleshots/new'
     end
+    
   end
 
   def edit
