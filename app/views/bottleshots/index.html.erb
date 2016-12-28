@@ -9,11 +9,9 @@
 
     <h3>All of my bottle shots</h3>
 
-    <ul id="bottleshot-index" data-user-id="<%= @user.id %>">
+    <ul id="bottleshot-index" data-user-id="<%= @user.id %>"></ul>
 
-    </ul>
-
-    <ul>
+    <!--<ul>
       <% @bottleshots.each do |bottleshot| %>
         <li><%= link_to bottleshot.fullname, user_bottleshot_path(@user, bottleshot) %> - <%= bottleshot.status %> 
           <% if bottleshot.status == "open order" %>
@@ -22,7 +20,8 @@
           <% end %>
         </li>
       <% end %>
-    </ul>
+    </ul>-->
+
     <form method="get" action="<%=new_user_bottleshot_path(@user)%>">
         <button type="submit">Add A New Bottleshot</button>
     </form>
@@ -36,8 +35,11 @@
   $( document ).ready(function() {
     var userId = parseInt($("#bottleshot-index").attr("data-user-id"))
     $.get("/users/" + userId + "/bottleshots.json", function(data) {
-      data.forEach(function(bottleshot) {
-        var li = '<li class="bottleshot-info"><span><a class="bottleshot-varietal" href="">' + bottleshot["varietal"] + '</a></span> - <span>' + bottleshot["vintage"] + " - " + bottleshot["status"] + '</span></li>'
+      data.forEach(function(bottleshot_info) {
+
+        var bottleshot = new Bottleshot(bottleshot_info)
+
+        var li = '<li class="bottleshot-info"><span><a class="bottleshot-varietal" href="' + "/users/" + userId + "/bottleshots/" + bottleshot_info["id"] + '">' + bottleshot.fullname + '</a></span> - <span>' + bottleshot_info["status"] + '</span></li>'
         $("#bottleshot-index").append(li)
         if (bottleshot["status"] == "open order") {
 
