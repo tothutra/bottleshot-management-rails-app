@@ -42,15 +42,19 @@
       var bottleshot = new Bottleshot(data)
 
       $(".bottleshot-name").text(bottleshot.fullname)
-      $(".bottle-shape").text(bottleshot.bottle_shape["name"])
-      $(".glass-color").text(bottleshot.glass_color["name"])
-      $(".wine-color").text(bottleshot.wine_color["name"])
-      $(".capsule").text(bottleshot.capsule["name"])
-      $(".paperstock").text(bottleshot.paperstock["name"])
-      $(".label-finish").text(bottleshot.label_finish["name"])
+      $(".bottle-shape").text(data["bottle_shape"]["name"])
+      $(".glass-color").text(data["glass_color"]["name"])
+      $(".wine-color").text(data["wine_color"]["name"])
+      $(".capsule").text(data["capsule"]["name"])
+      $(".paperstock").text(data["paperstock"]["name"])
+      $(".label-finish").text(data["label_finish"]["name"])
       $(".next-bottleshot").attr("data-id", data["id"])
       $(".screenprinted").text(bottleshot.is_screenprinted())
-      $(".add-on").text(bottleshot.all_add_ons())
+      var add_ons = []
+      data["add_ons"].forEach(function(add_on) {
+        add_ons.push(add_on["name"])
+      })
+      $(".add-on").text(add_ons.join(", "))
     })
   });
 </script>
@@ -63,15 +67,19 @@
           var bottleshot = new Bottleshot(data)
 
           $(".bottleshot-name").text(bottleshot.fullname)
-          $(".bottle-shape").text(bottleshot.bottle_shape["name"])
-          $(".glass-color").text(bottleshot.glass_color["name"])
-          $(".wine-color").text(bottleshot.wine_color["name"])
-          $(".capsule").text(bottleshot.capsule["name"])
-          $(".paperstock").text(bottleshot.paperstock["name"])
-          $(".label-finish").text(bottleshot.label_finish["name"])
+          $(".bottle-shape").text(data["bottle_shape"]["name"])
+          $(".glass-color").text(data["glass_color"]["name"])
+          $(".wine-color").text(data["wine_color"]["name"])
+          $(".capsule").text(data["capsule"]["name"])
+          $(".paperstock").text(data["paperstock"]["name"])
+          $(".label-finish").text(data["label_finish"]["name"])
           $(".next-bottleshot").attr("data-id", data["id"])
           $(".screenprinted").text(bottleshot.is_screenprinted())
-          $(".add-on").text(bottleshot.all_add_ons())
+          var add_ons = []
+          data["add_ons"].forEach(function(add_on) {
+            add_ons.push(add_on["name"])
+          })
+          $(".add-on").text(add_ons.join(", "))
       })
     }))
   })

@@ -11,17 +11,6 @@
 
     <ul id="bottleshot-index" data-user-id="<%= @user.id %>"></ul>
 
-    <!--<ul>
-      <% @bottleshots.each do |bottleshot| %>
-        <li><%= link_to bottleshot.fullname, user_bottleshot_path(@user, bottleshot) %> - <%= bottleshot.status %> 
-          <% if bottleshot.status == "open order" %>
-            - <%=link_to "Delete", user_bottleshot_path(@user, bottleshot), method: "DELETE" %>
-            - <%=link_to "Edit", edit_user_bottleshot_path(@user, bottleshot) %>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>-->
-
     <form method="get" action="<%=new_user_bottleshot_path(@user)%>">
         <button type="submit">Add A New Bottleshot</button>
     </form>
