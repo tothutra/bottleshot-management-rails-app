@@ -1,4 +1,6 @@
 function Bottleshot(attributes){
+  this.id = attributes.id
+  this.status = attributes.status
   this.varietal = attributes.varietal
   this.vintage = attributes.vintage
   this.fullname = attributes.vintage + " " + attributes.varietal
@@ -27,3 +29,10 @@ function Bottleshot(attributes){
     return add_ons.join(", ")
   }*/
 }
+
+Bottleshot.prototype.appendToDOM = function(element, userId) {
+  var li = `<li class="bottleshot-info"><span><a class="bottleshot-varietal" href="/users/${userId}/bottleshots/${this.id}">${this.fullname}</a></span> - <span>${this.status}</span></li>`
+  element.append(li)
+
+}
+
