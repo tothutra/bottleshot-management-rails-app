@@ -37,7 +37,36 @@
     var id = parseInt($(".next-bottleshot").attr("data-id"))
     var userId = parseInt($(".next-bottleshot").attr("data-user-id"))
 
-    $.get("/users/" + userId + "/bottleshots/" + id + ".json", function(data) {
+    fetch(`/users/${userId}/bottleshots/${id}.json`)
+      .then(parseToJSON)
+      .then(appendResponseToDOM)
+      .catch(logFailure)
+
+    function parseToJSON(response) {
+      return response.json()
+    }
+
+    function appendResponseToDOM(json) {
+      var bottleshot = new Bottleshot(json)
+      bottleshot.appendBottleInfoToDOM()
+      $(".next-bottleshot").attr("data-id", bottleshot.id)
+    }
+
+    function logFailure(error) {
+      console.log(error)
+    }
+
+    $(".next-bottleshot").on("click", function () {
+      var nextId = parseInt($(".next-bottleshot").attr("data-id")) + 1
+      var userId = parseInt($(".next-bottleshot").attr("data-user-id"))
+      fetch(`/users/${userId}/bottleshots/${nextId}.json`)
+        .then(parseToJSON)
+        .then(appendResponseToDOM)
+        .catch(logFailure)
+    })
+  });
+</script>
+<!--/*    $.get("/users/" + userId + "/bottleshots/" + id + ".json", function(data) {
 
       var bottleshot = new Bottleshot(data)
 
@@ -83,4 +112,4 @@
       })
     }))
   })
-</script>
+</script>*/-->

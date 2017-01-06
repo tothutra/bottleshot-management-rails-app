@@ -25,8 +25,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'pundit'
 gem 'omniauth'
-gem 'omniauth-google-oauth2' 
+gem 'omniauth-google-oauth2'
 gem 'active_model_serializers'
+gem 'eventmachine', github: 'sodabrew/eventmachine', ref: '5adf325ef197177547fed2a440ff6ce9c3dc53e1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -49,4 +50,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
