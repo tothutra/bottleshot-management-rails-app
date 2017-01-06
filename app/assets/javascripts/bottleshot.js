@@ -68,9 +68,12 @@ Bottleshot.prototype.renderAddOns = function () {
     return ""
   } else {
     var add_ons = []
-    this.add_ons.forEach(function(add_on) {
+    for (var i = 0; i < this.add_ons.length; i++) {
+      add_ons.push(this.add_ons[i]["name"]) 
+    }
+    /*this.add_ons.forEach(function(add_on) {
       add_ons.push(add_on["name"])
-    })
+    })*/
     return add_ons.join(", ")
   }
 }
