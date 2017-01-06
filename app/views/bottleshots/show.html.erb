@@ -67,9 +67,46 @@
   });
 </script>
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
+  $( document ).ready(function() {
+    var id = parseInt($(".next-bottleshot").attr("data-id"))
+    var userId = parseInt($(".next-bottleshot").attr("data-user-id"))
 
-</script>
+    $.ajax({
+      method: "GET",
+      url: `/users/${userId}/bottleshots/${id}.json`,
+      dataType: "json"
+    })
+    .done(function (response) {
+      appendResponseToDOM(response)
+    })
+    .fail(function (error) {
+      logFailure(error)
+    })
+
+    function appendResponseToDOM(json) {
+      var bottleshot = new Bottleshot(json)
+      bottleshot.appendBottleInfoToDOM()
+      $(".next-bottleshot").attr("data-id", bottleshot.id)
+    }
+
+    function logFailure(error) {
+      console.log(error)
+    }
+
+    $(".next-bottleshot").on("click", function () {
+      var nextId = parseInt($(".next-bottleshot").attr("data-id")) + 1
+      var userId = parseInt($(".next-bottleshot").attr("data-user-id"))
+      fetch(`/users/${userId}/bottleshots/${nextId}.json`)
+        .then(parseToJSON)
+        .then(appendResponseToDOM)
+        .catch(logFailure)
+    })
+  });
+
+</script>-->
+
+
 <!--/*    $.get("/users/" + userId + "/bottleshots/" + id + ".json", function(data) {
 
       var bottleshot = new Bottleshot(data)
