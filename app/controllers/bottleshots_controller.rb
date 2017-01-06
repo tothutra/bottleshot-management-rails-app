@@ -1,10 +1,11 @@
 class BottleshotsController < ApplicationController
 
-  before_action :find_user 
+  before_action :find_user
   before_action :set_bottleshot, only: [:show, :edit, :update, :destroy]
 
   def index
     @bottleshots = @user.bottleshots
+    @bottleshot = Bottleshot.new
     respond_to do |format|
       format.html {render :index}
       format.json {render json: @bottleshots}
@@ -29,7 +30,7 @@ class BottleshotsController < ApplicationController
     else
       render 'bottleshots/new'
     end
-    
+
   end
 
   def edit

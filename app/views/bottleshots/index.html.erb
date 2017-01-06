@@ -11,19 +11,30 @@
 
     <ul id="bottleshot-index" data-user-id="<%= @user.id %>"></ul>
 
-    <form method="get" action="<%=new_user_bottleshot_path(@user)%>">
+    <!--<form method="get" action="<%=new_user_bottleshot_path(@user)%>">
         <button type="submit">Add A New Bottleshot</button>
-    </form>
+    </form>-->
+
   </div>
   <div class="col-md-4">
     <%= render "layouts/user_control_panel"%>
+  </div>
+</div>
+<div class="row">
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    New bottle shot please!
+  </button>
+  <div class="collapse" id="collapseExample">
+    <div class="well">
+      <%= render 'bottleshots/form' %>
+    </div>
   </div>
 </div>
 
 <script type="text/javascript">
   $( document ).ready(function() {
     var userId = parseInt($("#bottleshot-index").attr("data-user-id"))
-  
+
     fetch("/users/" + userId + "/bottleshots.json")
       .then(parseToJSON)
       .then(appendResponseToDOM)
@@ -44,7 +55,17 @@
 
     function logFailure(error) {
       console.log("HTTP JSON request error is : ", error)
-    } 
+    }
 
+    $("form").on("submit", function(event) {
+      event.preventDefault();
+      var values = $(this).serialize()
+      var posting = $.post("/users/" + userId + "/bottleshots", values)
+      posting.done(function(data) {
+        var newBottleshot = new Bottleshot(data)
+        var element = $("#bottleshot-index")
+        newBottleshot.appendToDOM(element, userId)
+      })
+    })
   });
 </script>
