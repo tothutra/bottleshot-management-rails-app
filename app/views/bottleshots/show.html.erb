@@ -52,10 +52,6 @@
       $(".next-bottleshot").attr("data-id", bottleshot.id)
     }
 
-    function logFailure(error) {
-      console.log(error)
-    }
-
     $(".next-bottleshot").on("click", function () {
       var nextId = parseInt($(".next-bottleshot").attr("data-id")) + 1
       var userId = parseInt($(".next-bottleshot").attr("data-user-id"))
@@ -66,91 +62,3 @@
     })
   });
 </script>
-
-<!--<script type="text/javascript">
-  $( document ).ready(function() {
-    var id = parseInt($(".next-bottleshot").attr("data-id"))
-    var userId = parseInt($(".next-bottleshot").attr("data-user-id"))
-
-    $.ajax({
-      method: "GET",
-      url: `/users/${userId}/bottleshots/${id}.json`,
-      dataType: "json"
-    })
-    .done(function (response) {
-      appendResponseToDOM(response)
-    })
-    .fail(function (error) {
-      logFailure(error)
-    })
-
-    function appendResponseToDOM(json) {
-      var bottleshot = new Bottleshot(json)
-      bottleshot.appendBottleInfoToDOM()
-      $(".next-bottleshot").attr("data-id", bottleshot.id)
-    }
-
-    function logFailure(error) {
-      console.log(error)
-    }
-
-    $(".next-bottleshot").on("click", function () {
-      var nextId = parseInt($(".next-bottleshot").attr("data-id")) + 1
-      var userId = parseInt($(".next-bottleshot").attr("data-user-id"))
-      fetch(`/users/${userId}/bottleshots/${nextId}.json`)
-        .then(parseToJSON)
-        .then(appendResponseToDOM)
-        .catch(logFailure)
-    })
-  });
-
-</script>-->
-
-
-<!--/*    $.get("/users/" + userId + "/bottleshots/" + id + ".json", function(data) {
-
-      var bottleshot = new Bottleshot(data)
-
-      $(".bottleshot-name").text(bottleshot.fullname)
-      $(".bottle-shape").text(data["bottle_shape"]["name"])
-      $(".glass-color").text(data["glass_color"]["name"])
-      $(".wine-color").text(data["wine_color"]["name"])
-      $(".capsule").text(data["capsule"]["name"])
-      $(".paperstock").text(data["paperstock"]["name"])
-      $(".label-finish").text(data["label_finish"]["name"])
-      $(".next-bottleshot").attr("data-id", data["id"])
-      $(".screenprinted").text(bottleshot.is_screenprinted())
-      var add_ons = []
-      data["add_ons"].forEach(function(add_on) {
-        add_ons.push(add_on["name"])
-      })
-      $(".add-on").text(add_ons.join(", "))
-    })
-  });
-</script>
-<script type="text/javascript" charset="utf-8">
-  $(function() {
-    $(".next-bottleshot").on("click", (function() {
-      var nextId = parseInt($(".next-bottleshot").attr("data-id")) + 1
-      var userId = parseInt($(".next-bottleshot").attr("data-user-id"))
-      $.get("/users/" + userId + "/bottleshots/" + nextId + ".json", function(data) {
-          var bottleshot = new Bottleshot(data)
-
-          $(".bottleshot-name").text(bottleshot.fullname)
-          $(".bottle-shape").text(data["bottle_shape"]["name"])
-          $(".glass-color").text(data["glass_color"]["name"])
-          $(".wine-color").text(data["wine_color"]["name"])
-          $(".capsule").text(data["capsule"]["name"])
-          $(".paperstock").text(data["paperstock"]["name"])
-          $(".label-finish").text(data["label_finish"]["name"])
-          $(".next-bottleshot").attr("data-id", data["id"])
-          $(".screenprinted").text(bottleshot.is_screenprinted())
-          var add_ons = []
-          data["add_ons"].forEach(function(add_on) {
-            add_ons.push(add_on["name"])
-          })
-          $(".add-on").text(add_ons.join(", "))
-      })
-    }))
-  })
-</script>*/-->

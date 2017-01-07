@@ -1,26 +1,38 @@
-function Bottleshot(attributes){
-  this.id = attributes.id
-  this.status = attributes.status
-  this.varietal = attributes.varietal
-  this.vintage = attributes.vintage
-  this.bottle_shape = attributes.bottle_shape
-  this.glass_color = attributes.glass_color
-  this.wine_color = attributes.wine_color
-  this.capsule = attributes.capsule
-  this.paperstock = attributes.paperstock
-  this.label_finish = attributes.label_finish
-  this.add_ons = attributes.add_ons
-  this.screenprinted = attributes.screenprinted
-  this.fullname = attributes.vintage + " " + attributes.varietal
+function Bottleshot() {
+  return {
+    create,
+    renderBottleShape
+  }
+
+  function create(attributes) {
+    this.id = attributes.id
+    this.status = attributes.status
+    this.varietal = attributes.varietal
+    this.vintage = attributes.vintage
+    this.bottle_shape = attributes.bottle_shape
+    this.glass_color = attributes.glass_color
+    this.wine_color = attributes.wine_color
+    this.capsule = attributes.capsule
+    this.paperstock = attributes.paperstock
+    this.label_finish = attributes.label_finish
+    this.add_ons = attributes.add_ons
+    this.screenprinted = attributes.screenprinted
+    this.fullname = attributes.vintage + " " + attributes.varietal
+  }
+
+  function renderBottleShape() {
+    if (this.bottle_shape == null) {
+      return "N/A"
+    } else {
+      return this.bottle_shape.name
+      debugger
+    }
+  }
 }
 
+
 Bottleshot.prototype.renderBottleShape = function() {
-  if (this.bottle_shape == null) {
-    return "N/A"
-  } else {
-    return this.bottle_shape.name
-    debugger
-  }
+
 }
 
 Bottleshot.prototype.renderGlassColor = function () {
@@ -69,7 +81,7 @@ Bottleshot.prototype.renderAddOns = function () {
   } else {
     var add_ons = []
     for (var i = 0; i < this.add_ons.length; i++) {
-      add_ons.push(this.add_ons[i]["name"]) 
+      add_ons.push(this.add_ons[i]["name"])
     }
     /*this.add_ons.forEach(function(add_on) {
       add_ons.push(add_on["name"])
@@ -99,6 +111,15 @@ Bottleshot.prototype.appendBottleInfoToDOM = function () {
 }
 
 Bottleshot.prototype.appendToDOM = function(element, userId) {
-  var li = `<li class="bottleshot-info"><span><a class="bottleshot-varietal" href="/users/${userId}/bottleshots/${this.id}">${this.fullname}</a></span> - <span>${this.status}</span></li>`
-  element.append(li)
+  const { id, fullname, status } = this
+  var html = `
+    <li class="bottleshot-info">
+      <span>
+        <a class="bottleshot-varietal" href="/users/${userId}/bottleshots/${id}">${fullname}</a>
+      </span>
+      -
+      <span>${status}</span>
+    </li>
+  `
+  element.append(html)
 }

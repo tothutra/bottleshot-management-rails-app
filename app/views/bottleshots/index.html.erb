@@ -20,20 +20,28 @@
     <%= render "layouts/user_control_panel"%>
   </div>
 </div>
+
 <div class="row">
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  <center><button class="btn btn-primary" type="button" id="showMeAwesome">
     New bottle shot please!
-  </button>
-  <div class="collapse" id="collapseExample">
-    <div class="well">
-      <%= render 'bottleshots/form' %>
-    </div>
+  </button></center>
+  <div class="awesomeModal">
+    <%= render 'bottleshots/form' %>
   </div>
 </div>
 
 <script type="text/javascript">
   $( document ).ready(function() {
     var userId = parseInt($("#bottleshot-index").attr("data-user-id"))
+    var modal = $(".awesomeModal")[0]
+
+    $("#showMeAwesome").on('click', function() {
+      if (modal.style.display !== 'block') {
+        modal.style.display = 'block';
+      } else {
+        modal.style.display = 'none';
+      }
+    })
 
     fetch("/users/" + userId + "/bottleshots.json")
       .then(parseToJSON)
@@ -48,7 +56,6 @@
       var element = $("#bottleshot-index")
       for (var i = 0; i < json.length; i++) {
         var bottleshot = new Bottleshot(json[i])
-        console.log(bottleshot)
         bottleshot.appendToDOM(element, userId)
       }
     }
